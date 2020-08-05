@@ -1,0 +1,37 @@
+{
+  "name": "ivysaur",
+  "version": "1.0.0",
+  "description": "project for team ivysaur",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ssjlee93/ru-2020-projec-03.git"
+  },
+  "keywords": [
+    "mongodb",
+    "express",
+    "react",
+    "node",
+    "axios",
+    "react-router",
+    "currency",
+    "PPP",
+    "big",
+    "mac",
+    "index",
+    "calculator",
+    "budget",
+    "travel",
+    "money"
+  ],
+  "author": "Steve S. Lee, Erica Cannedy, Kobe Matias, Jenny Yoon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ssjlee93/ru-2020-projec-03/issues"
+  },
+  "homepage": "https://github.com/ssjlee93/ru-2020-projec-03#readme"
+}
