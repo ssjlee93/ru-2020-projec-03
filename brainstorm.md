@@ -26,12 +26,16 @@ Write/save location data to a list
 Update the type for the location i.e. travel plan or home or work or restaurant list 
 Delete a location from a list 
 5.	Travel budget planner  `${name}` 
-API docs 
+
+* API docs 
 https://www.quandl.com/data/ECONOMIST-The-Economist-Big-Mac-Index/usage/quickstart/api
 https://docs.quandl.com/docs/getting-started
-Concepts to understand 
+* api key: x1vEiGNCDZ7dN85mViLU
+
+* Concepts to understand 
 https://en.wikipedia.org/wiki/Big_Mac_Index
 https://en.wikipedia.org/wiki/Purchasing_power_parity
+
 Use big mac index
 •	Idea: if you wish to spend $2000 USD in Korea, then we can show them KRW equivalent to spending $2000, which does not equate to exactly $2000 
 •	PPP reflective travel budget planner 
