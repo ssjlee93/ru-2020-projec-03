@@ -44,11 +44,17 @@ Use big mac index
 •	Naming: money-related, travel/trip, accuracy 
 •	Motivation: currency exchange of excess amount of money loses money for no reason. To minimize such tautological expenses, we developed this app. As a developer, we want a travel budget planner that gives us insight into how much we should actually bring. 
 •	Slogan: Don’t carry too much. Travel with just about right budget 
+
 Read api index 
+
 Process index with inserted value 
+
 Write/save a list of budget category i.e. food, sightseeing, entertainment, alcohol 
+
 Read the list of expenses with how much money expected to spend 
+
 Update the budget category and amount 
+
 Delete anything you want except the index 
 
 Roles: 
