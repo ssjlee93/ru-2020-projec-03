@@ -30,3 +30,5 @@ Wireframe of our application
 
 ## Complication Ideas 
 * pie chart of budget 
+* a list of budget inputs with budget notes 
+

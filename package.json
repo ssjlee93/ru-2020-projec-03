@@ -33,5 +33,8 @@
   "bugs": {
     "url": "https://github.com/ssjlee93/ru-2020-projec-03/issues"
   },
-  "homepage": "https://github.com/ssjlee93/ru-2020-projec-03#readme"
+  "homepage": "https://github.com/ssjlee93/ru-2020-projec-03#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }

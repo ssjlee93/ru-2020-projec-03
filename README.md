@@ -15,3 +15,5 @@ Team Ivysaur is a team of students at Rʌtgers Unɪversɪty bootcɛmp during Mar
 * Kobe Matias - UI/UX design and frontend, React;
 * Jenny Yoon - presentation and frontend, HTML, CSS, JavaScript main;
 * Steve Lee - backend, MongoDB, deployment, README update;
+
+### This README will be preserved for final presentation 
