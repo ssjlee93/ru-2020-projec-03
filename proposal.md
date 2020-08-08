@@ -20,19 +20,10 @@ This budget calculator translates one currency into another currency with respec
 * Material UI - CSS framework for React based on Google's Material Design Guidelines
 * Firebase - authentication tool
 
-## Potential New Technology
-Needs updates 
-
 ## Sketch
 Wireframe of our application
 
-![Wireframe](/wireframe.jpg)
-
-## Installation 
-
-## Usage 
-
-## License
-MIT
-
-## Developments
+![Wireframe01](/wireframes/Web 1920-1.png)
+![Wireframe02](/wireframes/Web 1920-2.png)
+![Wireframe03](/wireframes/Web 1920-3.png)
+![Wireframe04](/wireframes/Web 1920-4.png)
