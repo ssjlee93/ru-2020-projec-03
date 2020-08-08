@@ -27,6 +27,6 @@ Team Ivysaur is a team of students at Rʌtgers Unɪversɪty bootcɛmp during Mar
 ## Usage 
 
 ## License
-MIT
+MIT License
 
 ## Developments
