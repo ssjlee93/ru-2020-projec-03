@@ -9,6 +9,10 @@ Team Ivysaur is a team of students at Rʌtgers Unɪversɪty bootcɛmp during Mar
 ## Table of Contents 
 
 * [Collaborators](#Collaborators)
+* [Installation](#Installation)
+* [Usage](#Usage)
+* [License](#License)
+* [Developments](#Developments)
 
 ### Collaborators 
 * Erica Cannedy - producer, backend, Authentication;
@@ -17,3 +21,12 @@ Team Ivysaur is a team of students at Rʌtgers Unɪversɪty bootcɛmp during Mar
 * Steve Lee - backend, MongoDB, deployment, README update;
 
 ### This README will be preserved for final presentation 
+
+## Installation 
+
+## Usage 
+
+## License
+MIT License
+
+## Developments

@@ -28,7 +28,11 @@ Wireframe of our application
 
 ![Wireframe](/wireframe.jpg)
 
-## Complication Ideas 
-* pie chart of budget 
-* a list of budget inputs with budget notes 
+## Installation 
 
+## Usage 
+
+## License
+MIT
+
+## Developments
