@@ -25,6 +25,8 @@ Read location data
 Write/save location data to a list 
 Update the type for the location i.e. travel plan or home or work or restaurant list 
 Delete a location from a list 
+
+# Chosen
 5.	Travel budget planner  `${name}` 
 
 * API docs 
@@ -59,5 +61,15 @@ Backend: Steve
 Target audience: TripAdvisor, travel suggestion, forums etc. 
 What is it?: budget calculator with respect to each currency's PPP 
 Brand name: Pocket Money
-	
+
+## Complication Ideas 
+* pie chart of budget with react piechart
+* a list of budget inputs with budget notes 
+* conditional render for sign in component
+
+## Safety Ideas 
+* note taker design and its code 
+* pie chart with fitness tracker code
+* hard code sign in input on landing page
+
 
