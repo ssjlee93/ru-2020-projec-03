@@ -1,5 +1,5 @@
 import React from "react";
-
+// Plain About Me page. No sign in or sign up on this page 
 function Home() {
   return (
     <div className="jumbotron jumbotron-fluid">
