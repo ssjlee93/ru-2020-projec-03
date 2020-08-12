@@ -25,3 +25,30 @@ Pocket Money is an app that allows users to log and view their budget. The app i
 Steve's version of second paragraph 
 Pocket Mony uses the Big Mac Index to reflect the relative value of USD (United States Dollar) you carry to another country. 
 
+### Components breakdown 
+pages 
+/home 
+    about description 
+    form for signup/signin (conditional render) 
+/main
+    drop down 
+    card div/ card group 
+        cards 
+    div for data 
+        pie chart
+        list of categories with values 
+/dashboard (optional) don't even talk about it rn 
+
+components 
+cards for main 
+pie chart for main
+list for main (list of categories)
+
+app bar ( nav bar)  <- this thiing is an a$$ 
+    along with routing each page <- this is super a$$ >
+
+form for signin 
+form for signup 
+
+drop down for country select 
+

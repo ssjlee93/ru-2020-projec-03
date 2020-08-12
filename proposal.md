@@ -23,7 +23,7 @@ This budget calculator translates one currency into another currency with respec
 ## Sketch
 Wireframe of our application
 
-![Wireframe01](/wireframes/"Web 1920-1.png")
-![Wireframe02](/wireframes/"Web 1920-2.png")
-![Wireframe03](/wireframes/"Web 1920-3.png")
-![Wireframe04](/wireframes/"Web 1920-4.png")
+![Wireframe01]("/wireframes/Web 1920-1.png")
+![Wireframe02]("/wireframes/Web 1920-2.png")
+![Wireframe03]("/wireframes/Web 1920-3.png")
+![Wireframe04]("/wireframes/Web 1920-4.png")
