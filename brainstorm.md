@@ -39,11 +39,11 @@ https://en.wikipedia.org/wiki/Big_Mac_Index
 https://en.wikipedia.org/wiki/Purchasing_power_parity
 
 Use big mac index
-•	Idea: if you wish to spend $2000 USD in Korea, then we can show them KRW equivalent to spending $2000, which does not equate to exactly $2000 
-•	PPP reflective travel budget planner 
-•	Naming: money-related, travel/trip, accuracy 
-•	Motivation: currency exchange of excess amount of money loses money for no reason. To minimize such tautological expenses, we developed this app. As a developer, we want a travel budget planner that gives us insight into how much we should actually bring. 
-•	Slogan: Don’t carry too much. Travel with just about right budget 
+*	Idea: if you wish to spend $2000 USD in Korea, then we can show them KRW equivalent to spending $2000, which does not equate to exactly $2000 
+*	PPP reflective travel budget planner 
+*	Naming: money-related, travel/trip, accuracy 
+*	Motivation: currency exchange of excess amount of money loses money for no reason. To minimize such tautological expenses, we developed this app. As a developer, we want a travel budget planner that gives us insight into how much we should actually bring. 
+*	Slogan: Don’t carry too much. Travel with just about right budget 
 
 Read api index 
 
