@@ -35,7 +35,7 @@ export default function PocketMoney() {
 
     return (
         <div>
-            <p>This your selection: {countries}</p>
+            <p>This your selection: afadf{countries}</p>
             <FormControl className={classes.formControl}>
                 <InputLabel htmlFor="age-native-simple">Countries</InputLabel>
                 <Select
