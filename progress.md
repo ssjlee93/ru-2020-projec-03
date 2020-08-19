@@ -83,3 +83,21 @@ Update: after read, update values
 Delete: if (!user) {delete by ID }  
 
 Steve had a weird epiphany that we didn't have a CRUD for MongoDB, but Firebase + MongoDB requires us to CRUD anyways. I was being dumb. Sorry guys 
+
+## 8/18 
+finished category.js  
+basic naviagation working  
+singin and signout modified  
+began password reset  
+modified firebase context  
+
+#### Trouble  
+understanding firebase  
+tabs vs. app bar  
+understanding firebase under React  
+
+#### To-do
+try APIs  
+set up backend  
+test firebase  
+styling  
