@@ -4,10 +4,23 @@ import Navigation from '../Navigation';
 import Landing from '../pages/Landing';
 import Main from '../pages/Main';
 import Home from '../pages/Home'; 
+
 import AccountPage from '../Account';
 import * as ROUTES from '../../constants/routes';
 import { withFirebase } from '../Firebase';
  
+const App = () => (
+    <Router>
+      <div>
+        <Navigation />
+        <hr />
+        <Route exact path="/" component={Landing} />
+        <Route exact path="/home" component={Home} />
+        <Route exact path="/main" component={Main} />
+        <Route exact path="/signout" component={Landing} />
+      </div>
+    </Router>
+
 
 class App extends Component {
   constructor(props) {

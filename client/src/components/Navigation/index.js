@@ -1,6 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 import SignOutButton from '../SignOut'; 
+
+import Button from "@material-ui/core/Button";
+
 import * as ROUTES from '../../constants/routes';
  
 const Navigation = ({ authUser }) => (
@@ -13,10 +17,12 @@ const Navigation = () => (
       <li>
       <Button color="primary" component={Link} to="/home">
         {/* we can swap "to" prop for ROUTES. something  */}
+
       Signin
+
     </Button>
       </li>
-      <li>
+      <li> 
         <Link to={ROUTES.LANDING}>Landing</Link>
       </li>
       <li>

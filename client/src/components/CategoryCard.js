@@ -22,7 +22,7 @@ export default function CategoryCard() {
           </CardContent>
           <CardActions>
           <form noValidate autoComplete="off">
-              <TextField id="CategoryBudget" label="Category Budget" variant="filled" />
+              <TextField id="CategoryBudget" label="Budget" variant="filled" />
               <br />
               </form>
           </CardActions>
