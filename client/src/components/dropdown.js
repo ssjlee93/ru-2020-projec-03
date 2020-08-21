@@ -3,59 +3,49 @@ import { makeStyles } from '@material-ui/core/styles';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
 
+import Typography from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/Grid';
 import Countries from '../utils/Countries.json';
 
-const useStyles = makeStyles((theme) => ({
-    formControl: {
-        margin: theme.spacing(1),
-        minWidth: 120,
-    },
-    selectEmpty: {
-        marginTop: theme.spacing(2),
-    },
-}));
-
-export default function dropdown() {
-
-    const classes = useStyles();
+export default function Dropdown() {
     // useState state variable
     const [countries, setCountries] = useState("");
     const [importcountries, setImportcountries] = useState(Countries)
-
-
 
     const handleChange = (event) => {
         let name = event.target.value;
         setCountries(name)
     };
 
-    
-
     return (
-        <div>
-            <p>This your selection: afadf{countries}</p>
-            <FormControl className={classes.formControl}>
-                <InputLabel htmlFor="age-native-simple">Countries</InputLabel>
-                <Select
-                    native
-                    value={countries}
-                    onChange={handleChange}
-                >
-                    <option aria-label="None" value=""/>
-                    {Object.entries(importcountries).map(([key,val]) => {
-                        return (
-                            <option key={val} value={val}>{key}</option>
-                        )
-                     })}
 
-                    
-                    
-                    
-                </Select>
-            </FormControl>
-        </div>
+
+            <Grid item xs={12}>
+                <Grid container spacing={2}>
+                    <Grid item xs={9}>
+                        <Typography variant="h5">Country of Destination: {countries}</Typography>
+                    </Grid>
+                    <Grid item xs={3}>
+                        <FormControl>
+                            <InputLabel htmlFor="age-native-simple">Countries</InputLabel>
+                            <Select
+                                native
+                                value={countries}
+                                onChange={handleChange}
+                            >
+                                <option aria-label="None" value=""/>
+                                {Object.entries(importcountries).map(([key,val]) => {
+                                    return (
+                                        <option key={key} value={val}>{key}</option>
+                                    )
+                                })}
+                            </Select>
+                        </FormControl>
+                    </Grid>
+                </Grid>
+            </Grid>
+
     )
 }
 
