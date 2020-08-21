@@ -4,37 +4,28 @@ import { Link } from 'react-router-dom';
 import SignOutButton from '../SignOut'; 
 
 import Button from "@material-ui/core/Button";
-
+import Box from '@material-ui/core/Box';
+import Typography from '@material-ui/core/Typography';
 import * as ROUTES from '../../constants/routes';
- 
-const Navigation = ({ authUser }) => (
-  <div>{authUser ? <NavigationAuth /> : <NavigationNonAuth />}</div>
-);
-
+import "./index.css";
 const Navigation = () => (
-  <div>
-    <ul>
-      <li>
-      <Button color="primary" component={Link} to="/home">
-        {/* we can swap "to" prop for ROUTES. something  */}
-
-      Signin
-
-    </Button>
-      </li>
-      <li> 
-        <Link to={ROUTES.LANDING}>Landing</Link>
-      </li>
-      <li>
-        <Link to={ROUTES.HOME}>Home</Link>
-      </li>
-      <li>
-        <Link to={ROUTES.ACCOUNT}>Account</Link>
-      </li>
-      <li>
-        <SignOutButton />
-      </li>
-    </ul>
+  <div className="NavBarContainer">
+    <Box display="flex">
+        <Box flexGrow={1}>
+          <Typography variant="h4" className="title">Pocket Money</Typography>
+        </Box>
+      <Box m={1}>
+        <Button className="navButton" color="primary" variant="outlined" component={Link} to="/home">
+          {/* we can swap "to" prop for ROUTES. something  */}
+          Home
+        </Button>
+      </Box>
+      <Box m={1}>
+        <Button className="navButton" color="primary" variant="outlined" component={Link} to="/signout">
+          Signout
+        </Button>
+      </Box>
+    </Box>
   </div>
 );
 const NavigationNonAuth = () => (

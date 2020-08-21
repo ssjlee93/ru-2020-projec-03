@@ -13,7 +13,6 @@ const App = () => (
     <Router>
       <div>
         <Navigation />
-        <hr />
         <Route exact path="/" component={Landing} />
         <Route exact path="/home" component={Home} />
         <Route exact path="/main" component={Main} />
