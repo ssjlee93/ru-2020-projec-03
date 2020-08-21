@@ -7,4 +7,6 @@ export default function PieChartCard() {
   return (
       <Typography variant="h4">Pie Chart Totals</Typography>
   );
+
 }
+

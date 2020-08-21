@@ -36,6 +36,7 @@
   "homepage": "https://github.com/ssjlee93/ru-2020-projec-03#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "firebase": "^7.18.0"
+    "firebase": "^7.18.0",
+    "recompose": "^0.30.0"
   }
 }
