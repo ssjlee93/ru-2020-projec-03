@@ -101,3 +101,10 @@ try APIs
 set up backend  
 test firebase  
 styling  
+
+## 8/20
+We need Firestore to save user data  
+found React version of Firebase. So far, we've been configuring Firebase for our app, but the doc shows us a drop in solution  
+correctly position navbar items using flexbox  
+#### Trouble
+dropdown.js and Dropdown.js are being pulled from the repo for some reason
