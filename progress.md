@@ -106,5 +106,9 @@ styling
 We need Firestore to save user data  
 found React version of Firebase. So far, we've been configuring Firebase for our app, but the doc shows us a drop in solution  
 correctly position navbar items using flexbox  
+
 #### Trouble
-dropdown.js and Dropdown.js are being pulled from the repo for some reason
+dropdown.js and Dropdown.js are being pulled from the repo for some reason  
+
+## 8/22 
+debugging Firebase  

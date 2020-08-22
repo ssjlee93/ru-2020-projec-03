@@ -4,13 +4,13 @@ import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import PieChartCard from "../PieChartContainer";
 import Typography from '@material-ui/core/Typography';
-import Dropdown from "../Dropdown";
+import Dropdown from "../Dropdowns";
 import Box from "@material-ui/core/Box";
 import Paper from '@material-ui/core/Paper';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Header from "../Header";
-import { withAuthorization } from '../Session';
+import { withAuthorization } from '../Sessions';
 
 function Main() {
   return (
