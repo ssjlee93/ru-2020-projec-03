@@ -4,17 +4,16 @@ import Navigation from '../Navigation';
 import Landing from '../pages/Landing';
 import Main from '../pages/Main';
 import Home from '../pages/Home';
-// import SignUpPage from '../SignUp';
-// import SignInPage from '../SignIn';
-// import PasswordForgetPage from '../PasswordForget';
+import SignUp from '../SignUp';
+import SignIn from '../SignIn';
+import PasswordForget from '../PasswordForget';
 
 //do we need routes for the above components or with these be nested within other routes?
 import AccountPage from '../Account';
 
 import * as ROUTES from '../../constants/routes';
-import { withAuthentication } from '../sessions';
-import { AuthUserContext } from '../sessions';
-import withAuthentication from './withAuthentication';
+import { withAuthentication } from '../Sessions';
+import { AuthUserContext } from '../Sessions';
  
 export { AuthUserContext, withAuthentication };
 
@@ -25,14 +24,14 @@ const App = () => (
 
       <hr />
 
-      <Route exact path={ROUTES.LANDING} component={LandingPage} />
-      <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
-      <Route path={ROUTES.SIGN_IN} component={SignInPage} />
+      <Route exact path={ROUTES.LANDING} component={Landing} />
+      <Route path={ROUTES.SIGN_UP} component={SignUp} />
+      <Route path={ROUTES.SIGN_IN} component={SignIn} />
       <Route
         path={ROUTES.PASSWORD_FORGET}
-        component={PasswordForgetPage}
+        component={PasswordForget}
       />
-      <Route path={ROUTES.HOME} component={HomePage} />
+      <Route path={ROUTES.HOME} component={Home} />
       {/* <Route path={ROUTES.ACCOUNT} component={AccountPage} /> */}
       {/* <Route path={ROUTES.ADMIN} component={AdminPage} /> */}
     </div>

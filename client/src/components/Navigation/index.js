@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import SignOutButton from '../SignOut'; 
 
-import { AuthUserContext } from '../sessions';
+import { AuthUserContext } from '../Sessions';
 import Button from "@material-ui/core/Button";
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
