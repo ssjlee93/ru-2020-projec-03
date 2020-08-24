@@ -1,13 +1,12 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
- import Navigation from "./components/Navigation";
+import Application from "./pages/Application";
+import UserProvider from "./components/UserProvier";
 
-const App = () => (
-  <Router>
-    <Navigation />
-  </Router>
-);
- 
+function App() {
+  return (
+    <UserProvider>
+      <Application />
+    </UserProvider>
+  );
+}
 export default App;
-
-

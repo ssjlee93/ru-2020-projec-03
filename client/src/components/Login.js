@@ -7,19 +7,15 @@ import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 
-export default function SignUpField() {
+export default function Login(props) {
 
   return (
     <Grid container spacing={2}>
         <Grid item xs={4}>
             <form noValidate autoComplete="off">
-            <TextField id="Username" label="Username" variant="filled" />
+            <TextField id={props.id} label={props.name} variant="filled" name={props.name} value={props.value} placeholder={props.placeholder} onChange={props.onChange}/>
             <br />
-            <TextField id="Password" label="Password" variant="filled" />
-            <br />
-            <Button variant="outlined" color="primary">
-            Create Account
-            </Button>
+           
             </form>
         </Grid>
     </Grid>
