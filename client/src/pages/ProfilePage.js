@@ -1,25 +1,20 @@
-import React from "react";
-import CategoryCard from "../CategoryCard";
+import React, { useContext } from "react";
+import UserContext from "../utils/UserContext";
+import CategoryCard from "../components/CategoryCard";
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
-import PieChartCard from "../PieChartContainer";
+import PieChartCard from "../components/PieChartContainer";
 import Typography from '@material-ui/core/Typography';
-import Dropdown from "../Dropdowns";
+import Dropdown from "../components/Dropdowns";
 import Box from "@material-ui/core/Box";
-import Paper from '@material-ui/core/Paper';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
-import Header from "../Header";
-import { withAuthorization } from '../Sessions';
+const ProfilePage = () => {
 
-function Main() {
+  const user = useContext(UserContext);
+
   return (
-  <Container fixed>
-    <Grid container spacing={2}>
-      <Grid item xs={12}>
-        <Header />
-      </Grid>
-    </Grid>
+    <Container fixed>
     <Grid container spacing={2}>
       <Grid item xs={7}>
         <Box my={2}>
@@ -61,10 +56,7 @@ function Main() {
       </Grid>
     </Grid>
   </Container>
-  );
-}
-const condition = authUser => !!authUser;
- 
-export default withAuthorization(condition)(Main);
+  ) 
+};
 
-
+export default ProfilePage;

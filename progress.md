@@ -112,3 +112,33 @@ dropdown.js and Dropdown.js are being pulled from the repo for some reason
 
 ## 8/22 
 debugging Firebase  
+
+#### Trouble
+The guide we've been following didn't work for us.  
+We called in our instructor's help for a Firebase authentication demo  
+
+## 8/23  
+re-worked the entire project around the demo code for firebase  
+deleted: 
+* account  
+* Admin  
+* constants  
+    * routes  
+* Header  
+* passwordChange  
+* passwordReset  
+* Sessions  
+* Signin  
+* SignOut  
+* Singup
+
+reworked  
+* App  
+* SingIn.js  
+* SignUp.js  
+
+#### To-do  
+Steve: test API, setup MongoDB 
+Kobe: style components, custom CSS, revise text (everywhere except Banner)  
+Erica: Facebook login, Twitter login, Banner text revision  
+Jenny: help Kobe code everything well and presentation around Thursday  
