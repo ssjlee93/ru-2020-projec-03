@@ -19,19 +19,20 @@ firebase.initializeApp(firebaseConfig);
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 
-const provider = new firebase.auth.GoogleAuthProvider();
+const GoogleProvider = new firebase.auth.GoogleAuthProvider();
 export const signInWithGoogle = () => {
-  auth.signInWithPopup(provider);
+  auth.signInWithPopup(GoogleProvider);
 };
 
-const providerOne = new firebase.auth.FacebookAuthProvider();
+const FacebookProvider = new firebase.auth.FacebookAuthProvider();
 export const signInWithFacebook = () => {
-  auth.signInWithPopup(providerOne);
+  auth.signInWithPopup(FacebookProvider);
 };
-const providerTwo = new firebase.auth.TwitterAuthProvider();
-export const signInWithTwitter = () => {
-  auth.signInWithPopup(providerTwo);
-};
+// const providerTwo = new firebase.auth.TwitterAuthProvider();
+// export const signInWithTwitter = () => {
+//   auth.signInWithPopup(providerTwo);
+// };
+
 export const generateUserDocument = async (user, additionalData) => {
   if (!user) return;
 
