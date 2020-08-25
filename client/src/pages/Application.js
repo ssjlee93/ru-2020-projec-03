@@ -23,6 +23,7 @@ function Application() {
           <ProfilePage />
           </Route>
         </Switch>
+        <footer>footer down</footer>
       </Router>
       :
       <Router>
@@ -38,6 +39,7 @@ function Application() {
             <PasswordReset />
           </Route>
         </Switch>
+         <footer>footer down</footer>
       </Router>
   );
 }
