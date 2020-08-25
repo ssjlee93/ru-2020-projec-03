@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { signInWithGoogle, auth } from "../utils/firebase";
+import { signInWithGoogle,signInWithFacebook, signInWithTwitter, auth } from "../utils/firebase";
 import Login from "../components/Login"
 import Banner from "../components/Banner";
 
@@ -57,6 +57,22 @@ const SignIn = () => {
           }}
         >
           Sign in with Google
+        </button>
+        <button
+          className="bg-red-500 hover:bg-red-600 w-full py-2 text-white"
+          onClick={() => {
+            signInWithFacebook();
+          }}
+        >
+          Sign in with Facebook
+        </button>
+        <button
+          className="bg-red-500 hover:bg-red-600 w-full py-2 text-white"
+          onClick={() => {
+            signInWithTwitter();
+          }}
+        >
+          Sign in with Twitter
         </button>
         <p className="text-center my-3">
           Don't have an account?{" "}

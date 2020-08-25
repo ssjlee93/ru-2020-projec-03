@@ -24,6 +24,14 @@ export const signInWithGoogle = () => {
   auth.signInWithPopup(provider);
 };
 
+const providerOne = new firebase.auth.FacebookAuthProvider();
+export const signInWithFacebook = () => {
+  auth.signInWithPopup(providerOne);
+};
+const providerTwo = new firebase.auth.TwitterAuthProvider();
+export const signInWithTwitter = () => {
+  auth.signInWithPopup(providerTwo);
+};
 export const generateUserDocument = async (user, additionalData) => {
   if (!user) return;
 
