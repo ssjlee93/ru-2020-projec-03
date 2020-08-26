@@ -1,0 +1,22 @@
+body {
+    background-image: url(https://images.unsplash.com/photo-1504609773096-104ff2c73ba4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.NavBarContainer {
+    background-color: #B6EFD4 !important;
+}
+
+.mainContainer {
+    padding-top: 2rem;
+    flex: 1 0 auto;
+}
+
+.SignInMain {
+    text-align: center;
+}
+
+.fb-login-button {
+    margin-top: 1rem;
+}

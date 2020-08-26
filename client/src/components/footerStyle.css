@@ -1,0 +1,6 @@
+.FooterContainer {
+    background-color: #B6EFD4;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    flex-shrink: 0;
+}
