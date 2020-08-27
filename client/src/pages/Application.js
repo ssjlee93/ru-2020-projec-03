@@ -8,7 +8,7 @@ import SignUp from "./SignUp";
 
 import ProfilePage from "./ProfilePage";
 import PasswordReset from "./PasswordReset";
-
+import Footer from "../components/Footer";
 import Navigation from "../components/Navigation";
 
 function Application() {
@@ -23,7 +23,7 @@ function Application() {
           <ProfilePage />
           </Route>
         </Switch>
-        <footer>footer down</footer>
+        <Footer/>
       </Router>
       :
       <Router>
@@ -39,7 +39,7 @@ function Application() {
             <PasswordReset />
           </Route>
         </Switch>
-         <footer>footer down</footer>
+         <Footer/>
       </Router>
   );
 }
