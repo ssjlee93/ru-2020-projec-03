@@ -11,7 +11,6 @@ export default function Login(props) {
 
   return (
     <Grid container spacing={1} alignContent="center">
-        {/* <Grid item lg={1}></Grid> */}
         <Grid item lg={12}>
             <form noValidate autoComplete="off">
             <TextField id={props.id} label={props.name} variant="filled" name={props.name} value={props.value} placeholder={props.placeholder} onChange={props.onChange}/>
@@ -19,7 +18,6 @@ export default function Login(props) {
            
             </form>
         </Grid>
-        {/* <Grid item lg={1}></Grid> */}
     </Grid>
   );
 }
