@@ -43,7 +43,7 @@ const SignIn = () => {
       <Grid item lg={1}></Grid>
       <Grid className="SignInMain" item lg={3} alignItems="center">
         <Card>
-        <Typography variant="h4">Sign In</Typography>
+        <Typography variant="h4" className="SignInHeader">Sign In</Typography>
         <br/>
         <Login name="Email"
           value={email}

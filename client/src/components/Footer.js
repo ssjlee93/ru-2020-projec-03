@@ -4,9 +4,13 @@ import Typography from '@material-ui/core/Typography';
 import "./footerStyle.css";
 
 const Footer = () => (
-    <Box className="FooterContainer">
-        <Typography variant="h4" className="title">placeholder text</Typography>
-    </Box>
+    <div>
+        <div className="phantom"></div>
+        <div className="FooterContainer">
+            <Typography variant="body1" className="title">Copyright 2020 - Team Ivysaur</Typography>
+        </div>
+    </div>
+    
 );
  
 export default Footer;
