@@ -28,10 +28,7 @@ const FacebookProvider = new firebase.auth.FacebookAuthProvider();
 export const signInWithFacebook = () => {
   auth.signInWithPopup(FacebookProvider);
 };
-// const providerTwo = new firebase.auth.TwitterAuthProvider();
-// export const signInWithTwitter = () => {
-//   auth.signInWithPopup(providerTwo);
-// };
+
 
 export const generateUserDocument = async (user, additionalData) => {
   if (!user) return;

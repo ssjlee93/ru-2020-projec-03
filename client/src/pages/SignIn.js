@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { signInWithGoogle, signInWithFacebook, signInWithTwitter, auth } from "../utils/firebase";
+import { signInWithGoogle, signInWithFacebook, auth } from "../utils/firebase";
 import Login from "../components/Login"
 import Banner from "../components/Banner";
 import Typography from '@material-ui/core/Typography';
@@ -20,6 +20,7 @@ const SignIn = () => {
     event.preventDefault();
     auth.signInWithEmailAndPassword(email, password).catch(error => {
       setError("Error signing in with password and email!");
+      alert(error.message)
       console.error("Error signing in with password and email", error);
     });
   };
@@ -27,10 +28,10 @@ const SignIn = () => {
   const onChangeHandler = (event) => {
     const { name, value } = event.currentTarget;
 
-    if (name === 'userEmail') {
+    if (name === 'Email') {
       setEmail(value);
     }
-    else if (name === 'userPassword') {
+    else if (name === 'Password') {
       setPassword(value);
     }
   };
@@ -54,6 +55,7 @@ const SignIn = () => {
           value={password}
           placeholder="Your Password"
           id="userPassword"
+          type="password"
           onChange={(event) => onChangeHandler(event)} />
 
         <br/>

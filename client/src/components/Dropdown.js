@@ -8,15 +8,15 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Countries from '../utils/Countries.json';
 
-export default function Dropdown() {
+export default function Dropdown(props) {
     // useState state variable
     const [countries, setCountries] = useState("");
     const [importcountries, setImportcountries] = useState(Countries)
 
-    const handleChange = (event) => {
-        let name = event.target.value;
-        setCountries(name)
-    };
+    // const handleChange = (event) => {
+    //     let name = event.target.value;
+    //     setCountries(name)
+    // };
 
     return (
 
@@ -32,7 +32,7 @@ export default function Dropdown() {
                             <Select
                                 native
                                 value={countries}
-                                onChange={handleChange}
+                                onChange={props.getIndex}
                             >
                                 <option aria-label="None" value=""/>
                                 {Object.entries(importcountries).map(([key,val]) => {

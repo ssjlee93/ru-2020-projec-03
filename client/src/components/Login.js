@@ -14,7 +14,7 @@ export default function Login(props) {
         <Grid item lg={2}></Grid>
         <Grid item lg={8}>
             <form noValidate autoComplete="off">
-            <TextField fullWidth id={props.id} label={props.name} variant="filled" name={props.name} value={props.value} placeholder={props.placeholder} onChange={props.onChange}/>
+            <TextField fullWidth id={props.id} label={props.name} variant="filled" name={props.name} value={props.value} placeholder={props.placeholder} onChange={props.onChange} type={props.type || 'text'} />
             <br />
            
             </form>
