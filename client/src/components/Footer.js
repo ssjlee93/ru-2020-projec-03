@@ -7,7 +7,7 @@ const Footer = () => (
     <div>
         <div className="phantom"></div>
         <div className="FooterContainer">
-            <Typography variant="body1" className="title">Copyright 2020 - Team Ivysaur</Typography>
+            <Typography variant="body1">Copyright 2020 - Team Ivysaur</Typography>
         </div>
     </div>
     

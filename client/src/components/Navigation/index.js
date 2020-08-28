@@ -12,7 +12,7 @@ const Navigation = () => (
   <div className="NavBarContainer">
   <Box display="flex">
       <Box flexGrow={1}>
-        <Typography variant="h4" className="title">Pocket Money</Typography>
+        <Typography variant="h3" className="title">Pocket Money</Typography>
       </Box>
     <Box m={1}>
       <Button className="navButton" color="primary" variant="outlined" onClick = {() => {auth.signOut()}}>
