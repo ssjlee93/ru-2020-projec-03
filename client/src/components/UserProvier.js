@@ -5,12 +5,13 @@ import UserContext from "../utils/UserContext";
 
 class UserProvider extends Component {
   state = {
-    user: null
+    user: null,
   };
 
   componentDidMount = async () => {
     auth.onAuthStateChanged(async userAuth => {
       const user = await generateUserDocument(userAuth);
+
       this.setState({ user });
     });
   };

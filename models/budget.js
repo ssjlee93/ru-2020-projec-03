@@ -4,10 +4,18 @@ const Schema = mongoose.Schema;
 
 const budgetSchema = new Schema(
   {
+    uid: {
+      type: String,
+      unique: true,
+      required: true
+    },
     administrative: {
       type: Number,
     },
     tickets: {
+      type: Number,
+    },
+    auto: {
       type: Number,
     },
     lodging: {
@@ -22,7 +30,7 @@ const budgetSchema = new Schema(
     shopping: {
       type: Number
     },
-    care: {
+    childcare: {
       type: Number
     }
   },

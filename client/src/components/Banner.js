@@ -5,6 +5,7 @@ import "./BannerStyle.css";
 // Plain About Me page. No sign in or sign up on this page 
 function Banner() {
   return (
+
     <Grid item lg={6}>
       <Typography className="whiteText Header" variant="h4" align="left">About Pocket Money</Typography>
         <Typography className="whiteText" align="justify" variant="body1">
@@ -14,8 +15,10 @@ function Banner() {
         <Typography className="whiteText" align="justify" variant="body1">
           Pocket Money is an app that allows users to log and view their budget. The app is powered by the Big Mac Index which allows a user to have a more accurate calculation of how far their money with go when visiting another country.  The app uses the USD as its baseline and does a back end conversion to more accurately equate the value of the USD to the economy of the desination county.  
         </Typography>
+    <p>The Big Mac Index is an informal measure of currency exchange rates at ppp. It measures their value against a similar basket of goods and services, in this case a Big Mac. Differing prices at market exchange rates would imply that one currency is under or overvalued.</p>
     </Grid>
         
+
   );
 }
 

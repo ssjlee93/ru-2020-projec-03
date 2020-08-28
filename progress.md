@@ -138,7 +138,33 @@ reworked
 * SignUp.js  
 
 #### To-do  
-Steve: test API, setup MongoDB 
+Steve: test API, setup MongoDB  
 Kobe: style components, custom CSS, revise text (everywhere except Banner)  
 Erica: Facebook login, Twitter login, Banner text revision  
 Jenny: help Kobe code everything well and presentation around Thursday  
+
+## 8/25  
+setting up backend with firebase on frontend  
+re-styling components and pages  
+
+#### Future Development  
+using uid vs. email  
+We selected using uid to reference users so that this app might support multi-factor login  
+
+## 8/25 
+working on basic CRUD. Relying on class activity and previous homework to draw ideas for code  
+frontend polishing began  
+
+#### Trouble
+CRUD is too hard  
+Could not finish CRUD on backend  
+
+## 8/27  
+CRUD still not working. Modified many files and codes to fit our project  
+frontend further polishing  
+frontend interacive with user input  
+components further segmented for better organization and separation of concerns  
+
+#### Trouble
+CRUD still too hard  
+late in schedule  

@@ -1,13 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
-
 import Button from "@material-ui/core/Button";
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
-
 import {auth} from "../../utils/firebase";
+
 import "./index.css";
+
 
 const Navigation = () => (
   <div className="NavBarContainer">
