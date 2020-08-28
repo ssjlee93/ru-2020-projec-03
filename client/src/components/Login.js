@@ -10,8 +10,8 @@ import Button from '@material-ui/core/Button';
 export default function Login(props) {
 
   return (
-    <Grid container spacing={2}>
-        <Grid item xs={4}>
+    <Grid container spacing={1} alignContent="center">
+        <Grid item lg={12}>
             <form noValidate autoComplete="off">
             <TextField id={props.id} label={props.name} variant="filled" name={props.name} value={props.value} placeholder={props.placeholder} onChange={props.onChange}/>
             <br />

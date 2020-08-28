@@ -3,6 +3,12 @@ import { Link } from "react-router-dom";
 import { signInWithGoogle, signInWithFacebook, signInWithTwitter, auth } from "../utils/firebase";
 import Login from "../components/Login"
 import Banner from "../components/Banner";
+import Typography from '@material-ui/core/Typography';
+import Grid from '@material-ui/core/Grid';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import Button from '@material-ui/core/Button';
+import "./SignInStyle.css";
 
 const SignIn = () => {
 
@@ -31,33 +37,41 @@ const SignIn = () => {
 
 
   return (
-    <div className="mt-8">
+    <Grid className="mainContainer" container spacing={6}>
+      <Grid item lg={1}></Grid>
       <Banner />
-      <h1 className="text-3xl mb-2 text-center font-bold">Sign In</h1>
-      <div className="border border-blue-400 mx-auto w-11/12 md:w-2/4 rounded py-8 px-4 md:px-8">
-        {error !== null && <div className="py-4 bg-red-600 w-full text-white text-center mb-3">{error}</div>}
-        <Login name="userEmail"
+      <Grid item lg={1}></Grid>
+      <Grid className="SignInMain" item lg={3} alignItems="center">
+        <Card>
+        <Typography variant="h4" className="SignInHeader">Sign In</Typography>
+        <br/>
+        <Login name="Email"
           value={email}
           placeholder="ex: example@gmail.com"
           id="userEmail"
           onChange={(event) => onChangeHandler(event)} />
-        <Login name="userPassword"
+        <Login name="Password"
           value={password}
           placeholder="Your Password"
           id="userPassword"
           onChange={(event) => onChangeHandler(event)} />
-        <button className="bg-green-400 hover:bg-green-500 w-full py-2 text-white" onClick={(event) => { signInWithEmailAndPasswordHandler(event, email, password) }}>
+
+        <br/>
+
+        <Button className="GoogleBtn" variant="outlined" color="primary" onClick={(event) => { signInWithEmailAndPasswordHandler(event, email, password) }}>
           Sign in
-          </button>
-        <p className="text-center my-3">or</p>
-        <button
-          className="bg-red-500 hover:bg-red-600 w-full py-2 text-white"
+          </Button>
+        <p>or</p>
+        <Button
+          variant="outlined" color="primary"
           onClick={() => {
             signInWithGoogle();
           }}
         >
           Sign in with Google
-        </button>
+        </Button>
+
+        <br/>
 
         <div className="fb-login-button" 
         data-size="medium" 
@@ -81,9 +95,10 @@ const SignIn = () => {
             Forgot Password?
           </Link>
         </p>
-      </div>
-
-    </div>
+        </Card>
+      </Grid>
+      <Grid item lg={1}></Grid>
+    </Grid>
   );
 };
 

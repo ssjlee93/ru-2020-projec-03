@@ -1,0 +1,17 @@
+.FooterContainer {
+    background-color: #B6EFD4;
+    padding: 20px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 35px;
+    width: 100%;
+    text-align: center;
+}
+
+.phantom {
+    display: block;
+    padding: 20px;
+    height: 35px;
+    width: 100%;
+}
