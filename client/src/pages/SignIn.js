@@ -37,7 +37,7 @@ const SignIn = () => {
 
 
   return (
-    <Grid className="mainContainer" container spacing={6}>
+    <Grid className="mainContainer" container spacing={3}>
       <Grid item lg={1}></Grid>
       <Banner />
       <Grid item lg={1}></Grid>

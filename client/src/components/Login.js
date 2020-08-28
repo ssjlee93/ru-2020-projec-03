@@ -11,13 +11,15 @@ export default function Login(props) {
 
   return (
     <Grid container spacing={1} alignContent="center">
-        <Grid item lg={12}>
+        <Grid item lg={2}></Grid>
+        <Grid item lg={8}>
             <form noValidate autoComplete="off">
-            <TextField id={props.id} label={props.name} variant="filled" name={props.name} value={props.value} placeholder={props.placeholder} onChange={props.onChange}/>
+            <TextField fullWidth id={props.id} label={props.name} variant="filled" name={props.name} value={props.value} placeholder={props.placeholder} onChange={props.onChange}/>
             <br />
            
             </form>
         </Grid>
+        <Grid item lg={2}></Grid>
     </Grid>
   );
 }
