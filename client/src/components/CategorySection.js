@@ -27,12 +27,14 @@ const CategorySection = (props) => {
         <CardContent>
           <Typography variant="h4">Budget Categories</Typography>
           <form>
+
             <Grid container spacing={1}>
                   {categories.map(item => <CategoryCard category={item} handleInputChange={props.handleInputChange} />)}
                   
                   <Button className="saveBtn" variant="outlined" onClick={props.saveBudget}>Save</Button>
                   <Button className="DeleteBtn" variant="outlined">Clear</Button>
             </Grid>
+
           </form>
         </CardContent>
       </Card>

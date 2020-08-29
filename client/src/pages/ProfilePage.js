@@ -6,7 +6,6 @@ import PieChartCard from "../components/PieChartContainer";
 import Typography from '@material-ui/core/Typography';
 import axios from "axios";
 import DropdownSection from "../components/DropdownSection";
-
 import Box from "@material-ui/core/Box";
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
@@ -17,7 +16,7 @@ const ProfilePage = () => {
   const user = useContext(UserContext);
   const {email, uid, displayName} = user;
   const [amount, setAmount ] = useState({});
-  
+  const [ userData, setUserData ] = useState("")
 
   // load user budget  
     useEffect(() => {
@@ -25,18 +24,26 @@ const ProfilePage = () => {
     }, [])
 
     useEffect(() => {
-      console.log(amount)
+      console.log(userData);
     }, [amount])
 
   //api/budget/id get
    function loadBudget() {
-    console.log(uid);
+
+     console.log(uid);
       API.getBudget(uid)
-        .then(res => 
-          setAmount(res.data)
+        .then(res => {
+          if (!res.data) {
+            return
+          } else {
+            setUserData(res.data)
+          }
+        }
+
         )
         .catch(err => console.log(err));
     };  
+
   // recognize value change, CHECKED
   // update state formObject 
       // what goes in formObject ? 
@@ -46,34 +53,40 @@ const ProfilePage = () => {
     setAmount({...amount,
       [name]: value
     })
-    
   }
 
   // write code for creating budget 
   //api/budget/id post
   function saveBudget(event) {
-    event.preventDefault();
-
     API.createBudget({
       ...amount,
       uid
-
-
     })
       .then(res => 
         setAmount(res.data)
       )
       .catch(err => console.log(err));
   };
-
+ 
   // write code for deleting budget
   //api/budget/id delete
-
+  function removeBudget() {
+    console.log(uid);
+     API.deleteBudget(uid)
+       .then(res => {
+         if (!res.data) {
+           return
+         } else {
+           alert("You have been DELETED")
+         }
+       }
+       )
+       .catch(err => console.log(err));
+   };  
   // write code for updating budget 
   //api/budget/id put
   function updateBudget(event) {
     event.preventDefault();
-
     API.updateBudget({
     ...amount,
     uid
@@ -99,6 +112,7 @@ const ProfilePage = () => {
     <Container fixed>
     <Grid container spacing={2}>
       <Grid item xs={7}>
+
         <Box my={2}>
           <Card variant="outlined">
             <CardContent>
@@ -106,6 +120,7 @@ const ProfilePage = () => {
             </CardContent>
           </Card>
         </Box>
+
        <DropdownSection  getIndex= {getIndex}/>
        <CategorySection handleInputChange={handleInputChange} saveBudget = {saveBudget}/>
       </Grid>
@@ -113,7 +128,7 @@ const ProfilePage = () => {
       <Box my={2}>
         <Card variant="outlined">
           <CardContent>
-            <PieChartCard />
+            <PieChartCard userData={userData}/>
           </CardContent>
         </Card>
       </Box>

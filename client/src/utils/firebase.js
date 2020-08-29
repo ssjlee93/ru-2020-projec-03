@@ -29,7 +29,6 @@ export const signInWithFacebook = () => {
   auth.signInWithPopup(FacebookProvider);
 };
 
-
 export const generateUserDocument = async (user, additionalData) => {
   if (!user) return;
 
