@@ -5,8 +5,8 @@ import React, { useState } from "react";
 import CategoryCard from "../components/CategoryCard";
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-
-
+import Button from '@material-ui/core/Button';
+import "./CategorySectionStyle.css";
 const CategorySection = (props) => {
   const [categories, setCategories] = useState(
     [
@@ -27,12 +27,14 @@ const CategorySection = (props) => {
         <CardContent>
           <Typography variant="h4">Budget Categories</Typography>
           <form>
-          <Grid container spacing={2}>
-      
-              {categories.map(item => <CategoryCard category={item} handleInputChange={props.handleInputChange} />)}
-              <button className = "save" onClick= {props.saveBudget}> Save</button>
-        
-          </Grid>
+
+            <Grid container spacing={1}>
+                  {categories.map(item => <CategoryCard category={item} handleInputChange={props.handleInputChange} />)}
+                  
+                  <Button className="saveBtn" variant="outlined" onClick={props.saveBudget}>Save</Button>
+                  <Button className="DeleteBtn" variant="outlined">Clear</Button>
+            </Grid>
+
           </form>
         </CardContent>
       </Card>

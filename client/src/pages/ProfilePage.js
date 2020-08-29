@@ -29,6 +29,7 @@ const ProfilePage = () => {
 
   //api/budget/id get
    function loadBudget() {
+
      console.log(uid);
       API.getBudget(uid)
         .then(res => {
@@ -38,6 +39,7 @@ const ProfilePage = () => {
             setUserData(res.data)
           }
         }
+
         )
         .catch(err => console.log(err));
     };  
@@ -110,8 +112,15 @@ const ProfilePage = () => {
     <Container fixed>
     <Grid container spacing={2}>
       <Grid item xs={7}>
-        <Typography>{displayName}</Typography>
-        <Typography>{uid}</Typography>
+
+        <Box my={2}>
+          <Card variant="outlined">
+            <CardContent>
+              <Typography variant="h5">Hi {displayName}! Welcome to your Budget Dashboard.</Typography>
+            </CardContent>
+          </Card>
+        </Box>
+
        <DropdownSection  getIndex= {getIndex}/>
        <CategorySection handleInputChange={handleInputChange} saveBudget = {saveBudget}/>
       </Grid>
