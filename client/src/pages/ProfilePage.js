@@ -15,7 +15,7 @@ import API from "../utils/API";
 
 const ProfilePage = () => {
   const user = useContext(UserContext);
-  const {email, uid} = user;
+  const {email, uid, displayName} = user;
   const [amount, setAmount ] = useState({});
   
 
@@ -99,8 +99,13 @@ const ProfilePage = () => {
     <Container fixed>
     <Grid container spacing={2}>
       <Grid item xs={7}>
-        <Typography>{email}</Typography>
-        <Typography>{uid}</Typography>
+        <Box my={2}>
+          <Card variant="outlined">
+            <CardContent>
+              <Typography variant="h5">Hi {displayName}! Welcome to your Budget Dashboard.</Typography>
+            </CardContent>
+          </Card>
+        </Box>
        <DropdownSection  getIndex= {getIndex}/>
        <CategorySection handleInputChange={handleInputChange} saveBudget = {saveBudget}/>
       </Grid>
