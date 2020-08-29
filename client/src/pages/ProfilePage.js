@@ -30,7 +30,8 @@ const ProfilePage = () => {
 
   //api/budget/id get
    function loadBudget() {
-      API.getBudget(uid.value)
+    console.log(uid);
+      API.getBudget(uid)
         .then(res => 
           setAmount(res.data)
         )
@@ -85,9 +86,6 @@ const ProfilePage = () => {
 
   // write code for ajax call to our index api
   //api/economist/country get
-  function loadIndex () {
-    API.getIndex(country)
-  }
 
   function getIndex(event) {
     event.preventDefault();
