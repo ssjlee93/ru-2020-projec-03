@@ -5,12 +5,12 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 
-const DropdownSection = () => (
+const DropdownSection = (props) => (
     <Box my={2}>
     <Card variant="outlined">
       <CardContent>
         <Typography variant="h4">Country Select</Typography>
-            <Dropdown />
+            <Dropdown getIndex= {props.getIndex}/>
       </CardContent>
     </Card>
   </Box>

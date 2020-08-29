@@ -23,7 +23,6 @@ export default function CategoryCard(props) {
             </Typography>
           </CardContent>
           <CardActions>
-          <form noValidate autoComplete="off">
               <TextField 
               className="CategoryBudget" 
               label="Amount (USD)" 
@@ -32,7 +31,6 @@ export default function CategoryCard(props) {
               onChange={props.handleInputChange}
               variant="filled" />
               <br />
-              </form>
           </CardActions>
         </Card>
       </Grid>

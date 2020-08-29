@@ -17,7 +17,7 @@ const SignUp = () => {
       generateUserDocument(user, { displayName });
     }
     catch (error) {
-      setError('Error Signing up with email and password');
+      setError(error.message);
     }
 
     setEmail("");
