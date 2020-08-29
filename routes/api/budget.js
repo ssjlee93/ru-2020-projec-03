@@ -5,9 +5,9 @@ const budgetController = require("../../controllers/budgetController");
 
 // Matches with "/api/books/:id"
 router
-  .route("/:id")
+  .route("/:uid")
   .post(budgetController.create)
-  .get(budgetController.findById)
+  .get(budgetController.findUser)
   .put(budgetController.update)
   .delete(budgetController.remove);
 

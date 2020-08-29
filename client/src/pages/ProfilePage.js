@@ -84,7 +84,10 @@ const ProfilePage = () => {
 };
 
   // write code for ajax call to our index api
-  //api/economist/id get
+  //api/economist/country get
+  function loadIndex () {
+    API.getIndex(country)
+  }
 
   function getIndex(event) {
     event.preventDefault();
