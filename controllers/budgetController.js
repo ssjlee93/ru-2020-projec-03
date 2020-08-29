@@ -2,15 +2,9 @@ const db = require("../models");
 
 // Defining methods for the booksController
 module.exports = {
-  findAll: function(req, res) {
+  findUser: function(req, res) {
     db.Budget
-      .find({})
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
-  },
-  findById: function(req, res) {
-    db.Budget
-      .findById(req.params.id)
+      .findOne({ uid: req.params.uid})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
@@ -22,14 +16,13 @@ module.exports = {
   },
   update: function(req, res) {
     db.Budget
-      .findOneAndUpdate({ _id: req.params.id }, req.body)
+      .findOneAndUpdate({ uid: req.params.uid }, req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
   remove: function(req, res) {
     db.Budget
-      .findById({ _id: req.params.id })
-      .then(dbModel => dbModel.remove())
+      .findOneAndDelete({uid: req.params.uid})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   }

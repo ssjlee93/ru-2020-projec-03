@@ -64,7 +64,10 @@ const ProfilePage = () => {
   //api/budget/id put
 
   // write code for ajax call to our index api
-  //api/economist/id get
+  //api/economist/country get
+  function loadIndex () {
+    API.getIndex(country)
+  }
 
   return (
     <Container fixed>
