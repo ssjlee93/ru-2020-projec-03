@@ -7,7 +7,7 @@ function Banner() {
   return (
 
     <Grid item lg={6}>
-      <Typography className="whiteText Header" variant="h4" align="left">About Pocket Money</Typography>
+      <Typography className="whiteText Header" variant="h4" align="left">What is Pocket Money?</Typography>
         <Typography className="whiteText" align="justify" variant="body1">
           Living in a world where the cost of living continuously rises, many people look to build a better relationship with their finances and money. Due to COVID-19 and the resulting job insecurities within various industries many individuals have begun to set budgets and expense guidelines for themselves so theat they can balance their wants and needs. Even with the apparent financial challenges, people desire to travel and pursue life experiences. To mediate the challenge and their desires, Pocket Money was born.
         </Typography>
