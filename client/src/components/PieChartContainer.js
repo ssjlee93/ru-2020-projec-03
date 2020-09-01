@@ -24,6 +24,7 @@ export default function PieChartCard(props) {
       </Grid>
       <Grid item lg={6}>
       <ul>
+
         <li>{props.userData.administrative} USD</li>
         <li>{props.userData.tickets} USD</li>
         <li>{props.userData.auto} USD</li>
@@ -36,6 +37,7 @@ export default function PieChartCard(props) {
       </Grid>
     </Grid>
   </div>
+
   );
 
 }

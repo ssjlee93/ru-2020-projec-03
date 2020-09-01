@@ -10,7 +10,12 @@ const DropdownSection = (props) => (
     <Card variant="outlined">
       <CardContent>
         <Typography variant="h4">Country Select</Typography>
-            <Dropdown getIndex= {props.getIndex}/>
+            <Dropdown 
+              handleDropdownChange = {props.handleDropdownChange}
+              country={props.country}
+              countries={props.countries}
+              code = {props.code}/>
+              
       </CardContent>
     </Card>
   </Box>

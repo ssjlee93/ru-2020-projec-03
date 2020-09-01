@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { auth, signInWithGoogle, generateUserDocument } from "../utils/firebase";
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
@@ -9,6 +9,7 @@ import Typography from '@material-ui/core/Typography';
 import "./SignUpStyle.css";
 
 const SignUp = () => {
+  const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [displayName, setDisplayName] = useState("");
@@ -96,6 +97,8 @@ const SignUp = () => {
           onClick={() => {
             try {
               signInWithGoogle();
+              //once signed in with google it will reroute to identified route below
+              history.push('/');
             } catch (error) {
               console.error("Error signing in with Google", error);
             }
@@ -117,5 +120,6 @@ const SignUp = () => {
     </Grid>
   );
 };
+
 
 export default SignUp;
