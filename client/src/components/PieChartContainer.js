@@ -8,14 +8,23 @@ export default function PieChartCard(props) {
     <div>
       <Typography variant="h4">Pie Chart Totals</Typography>
       <ul>
-      <li>Administrative<span>{props.userData.administrative}</span></li>,
-      <li>Tickets<span>{props.userData.tickets}</span></li>,
-      <li>Auto<span>{props.userData.auto}</span></li>,
-      <li>Lodging<span>{props.userData.lodging}</span></li>,
-      <li>Food<span>{props.userData.food}</span></li>,
-      <li>Entertainment<span>{props.userData.entertainment}</span></li>,
-      <li>Shopping<span>{props.userData.shopping}</span></li>,
-      <li>Childcare<span>{props.userData.childcare}</span></li>,
+      <li>Administrative<span>{props.userData.administrative}</span></li>
+      <li>Tickets<span>{props.userData.tickets}</span></li>
+      <li>Auto<span>{props.userData.auto}</span></li>
+      <li>Lodging<span>{props.userData.lodging}</span></li>
+      <li>Food<span>{props.userData.food}</span></li>
+      <li>Entertainment<span>{props.userData.entertainment}</span></li>
+      <li>Shopping<span>{props.userData.shopping}</span></li>
+      <li>Childcare<span>{props.userData.childcare}</span></li>
+<hr />
+      <li>Administrative<span>{props.userData.administrative}</span></li>
+      <li>Tickets<span>{props.userData.tickets}</span></li>
+      <li>Auto<span>{props.userData.auto}</span></li>
+      <li>Lodging<span>{props.userData.lodging}</span></li>
+      <li>Food<span>{props.userData.food}</span></li>
+      <li>Entertainment<span>{props.userData.entertainment}</span></li>
+      <li>Shopping<span>{props.userData.shopping}</span></li>
+      <li>Childcare<span>{props.userData.childcare}</span></li>
       </ul>
       </div>
   );
