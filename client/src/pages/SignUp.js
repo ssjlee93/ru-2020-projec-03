@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-import { auth, signInWithGoogle, generateUserDocument } from "../utils/firebase";
+import { updateDisplayName, signInWithGoogle, createUser } from "../utils/firebase";
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
@@ -9,28 +9,13 @@ import Typography from '@material-ui/core/Typography';
 import "./SignUpStyle.css";
 
 const SignUp = () => {
-  const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [displayName, setDisplayName] = useState("");
   const [error, setError] = useState(null);
 
-  const createUserWithEmailAndPasswordHandler = async (event, email, password) => {
-    event.preventDefault();
-    try {
-      const { user } = await auth.createUserWithEmailAndPassword(email, password);
-      generateUserDocument(user, { displayName });
-    }
-    catch (error) {
-      setError(error.message);
-    }
-
-    setEmail("");
-    setPassword("");
-    setDisplayName("");
-  };
-
   const onChangeHandler = event => {
+    event.preventDefault();
     const { name, value } = event.currentTarget;
 
     if (name === "userEmail") {
@@ -55,9 +40,11 @@ const SignUp = () => {
           </div>
         )}
 
+
         <form noValidate autoComplete="off" className="SignInForm">
           <TextField id="displayName"
             className="SignInTextArea"
+
             label="Display name"
             variant="filled"
             placeholder="ex: theExample"
@@ -65,6 +52,7 @@ const SignUp = () => {
             value={displayName}
             onChange={event => onChangeHandler(event)} />
           <br />
+
           <TextField 
           id="email" 
           className="SignInTextArea"
@@ -98,7 +86,7 @@ const SignUp = () => {
             try {
               signInWithGoogle();
               //once signed in with google it will reroute to identified route below
-              history.push('/');
+
             } catch (error) {
               console.error("Error signing in with Google", error);
             }

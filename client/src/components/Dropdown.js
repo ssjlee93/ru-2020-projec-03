@@ -19,7 +19,7 @@ export default function Dropdown(props) {
                             <InputLabel htmlFor="age-native-simple">Countries</InputLabel>
                             <Select
                                 native
-                                value={props.code}
+                                value={props.country}
                                 onChange={props.handleDropdownChange}
                             >
                                 <option aria-label="None" value=""/>

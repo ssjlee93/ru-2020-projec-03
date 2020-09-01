@@ -19,6 +19,22 @@ firebase.initializeApp(firebaseConfig);
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 
+export const createUser = (email, password) => {
+  auth.createUserWithEmailAndPassword(email, password)
+  // .then(user => {
+  //   console.log(user);
+  //  if(user) {
+  //    user.updateProfile({
+  //      displayName: display
+  //    })
+  //  }
+  // })
+};
+
+export const signInUser = (email, password) => {
+  auth.signInWithEmailAndPassword(email, password);
+}
+
 const GoogleProvider = new firebase.auth.GoogleAuthProvider();
 export const signInWithGoogle = () => {
   auth.signInWithPopup(GoogleProvider);
@@ -28,6 +44,14 @@ const FacebookProvider = new firebase.auth.FacebookAuthProvider();
 export const signInWithFacebook = () => {
   auth.signInWithPopup(FacebookProvider);
 };
+
+
+// export const updateDisplayName = (display) => {
+//   const user = auth.currentUser;
+//   user.updateProfile({
+//     displayName: display
+//   })
+// }
 
 export const generateUserDocument = async (user, additionalData) => {
   if (!user) return;

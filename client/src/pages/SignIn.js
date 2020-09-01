@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
-import { signInWithGoogle, signInWithFacebook, auth } from "../utils/firebase";
+import { Link } from "react-router-dom";
+import { signInWithGoogle, signInWithFacebook, auth, signInUser } from "../utils/firebase";
 import Login from "../components/Login"
 import Banner from "../components/Banner";
 import Typography from '@material-ui/core/Typography';
@@ -8,22 +8,12 @@ import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
 import "./SignInStyle.css";
 
 const SignIn = () => {
-  const history = useHistory();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState(null);
-
-  const signInWithEmailAndPasswordHandler = (event, email, password) => {
-    event.preventDefault();
-    auth.signInWithEmailAndPassword(email, password).catch(error => {
-      setError("Error signing in with password and email!");
-      alert(error.message)
-      console.error("Error signing in with password and email", error);
-    });
-  };
 
   const onChangeHandler = (event) => {
     const { name, value } = event.currentTarget;
@@ -44,64 +34,72 @@ const SignIn = () => {
       <Grid item lg={1}></Grid>
       <Grid className="SignInMain" item lg={3} alignItems="center">
         <Card>
-        <Typography variant="h4" className="SignInHeader">Sign In</Typography>
-        <br/>
-        <Login name="Email"
-          value={email}
-          placeholder="ex: example@gmail.com"
-          id="userEmail"
-          onChange={(event) => onChangeHandler(event)} />
-        <Login name="Password"
-          value={password}
-          placeholder="Your Password"
-          id="userPassword"
-          type="password"
-          onChange={(event) => onChangeHandler(event)} />
-
-        <br/>
-
-        <Button className="GoogleBtn" variant="outlined" color="primary" onClick={(event) => 
-        { signInWithEmailAndPasswordHandler(event, email, password) 
-        history.push('/profile');
-        }}>
-          Sign in
+          <Typography variant="h4" className="SignInHeader">Sign In</Typography>
+          <br />
+          <form noValidate autoComplete="off">
+            <TextField
+              fullwidth
+              variant="filled"
+              label="E-mail"
+              name="Email"
+              value={email}
+              placeholder="ex: example@gmail.com"
+              id="userEmail"
+              onChange={(event) => onChangeHandler(event)} />
+            <br />
+            <TextField
+              fullwidth
+              variant="filled"
+              label="Password"
+              name="Password"
+              value={password}
+              placeholder="Your Password"
+              id="userPassword"
+              type="password"
+              onChange={(event) => onChangeHandler(event)} />
+            <br />
+          </form>
+          <br />
+          <Button className="GoogleBtn" variant="outlined" color="primary" onClick={() => {
+            signInUser(email, password)
+          }}>
+            Sign in
           </Button>
-        <p>or</p>
-        <Button
-          variant="outlined" color="primary"
-          onClick={() => {
-            signInWithGoogle();
-            history.push('/profile');
-          }}
-        >
-          Sign in with Google
+          <p>or</p>
+          <Button
+            variant="outlined" color="primary"
+            onClick={() => {
+              signInWithGoogle();
+            }}
+          >
+            Sign in with Google
         </Button>
 
-        <br/>
+          <br />
 
-        <div className="fb-login-button" 
-        data-size="medium" 
-        data-button-type="continue_with" 
-        data-layout="default" 
-        data-auto-logout-link="false" 
-        data-use-continue-as="false" 
-        data-width=""
-        onClick={() => {
-          signInWithFacebook();
-          history.push('/profile');
-        }}
-        ></div>
+          <div className="fb-login-button"
+            data-size="medium"
+            data-button-type="continue_with"
+            data-layout="default"
+            data-auto-logout-link="false"
+            data-use-continue-as="false"
+            data-width=""
+            onClick={() => {
+              signInWithFacebook();
 
-        <p className="text-center my-3">
-          Don't have an account?{" "}
-          <Link to="signUp" className="text-blue-500 hover:text-blue-600">
-            Sign up here
+            }}
+          ></div>
+
+          <p className="text-center my-3">
+            Don't have an account?{" "}
+            <Link to="signUp" className="text-blue-500 hover:text-blue-600">
+              Sign up here
           </Link>{" "}
-          <br />{" "}
-          <Link to="passwordReset" className="text-blue-500 hover:text-blue-600">
-            Forgot Password?
+            <br />{" "}
+            <Link to="passwordReset" className="text-blue-500 hover:text-blue-600">
+              Forgot Password?
           </Link>
-        </p>
+          </p>
         </Card>
       </Grid>
       <Grid item lg={1}></Grid>
