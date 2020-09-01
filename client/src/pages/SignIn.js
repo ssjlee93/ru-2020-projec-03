@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { signInWithGoogle, signInWithFacebook, auth } from "../utils/firebase";
 import Login from "../components/Login"
 import Banner from "../components/Banner";
@@ -11,7 +11,7 @@ import Button from '@material-ui/core/Button';
 import "./SignInStyle.css";
 
 const SignIn = () => {
-
+  const history = useHistory();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
@@ -60,7 +60,10 @@ const SignIn = () => {
 
         <br/>
 
-        <Button className="GoogleBtn" variant="outlined" color="primary" onClick={(event) => { signInWithEmailAndPasswordHandler(event, email, password) }}>
+        <Button className="GoogleBtn" variant="outlined" color="primary" onClick={(event) => 
+        { signInWithEmailAndPasswordHandler(event, email, password) 
+        history.push('/profile');
+        }}>
           Sign in
           </Button>
         <p>or</p>
@@ -68,6 +71,7 @@ const SignIn = () => {
           variant="outlined" color="primary"
           onClick={() => {
             signInWithGoogle();
+            history.push('/profile');
           }}
         >
           Sign in with Google
@@ -84,6 +88,7 @@ const SignIn = () => {
         data-width=""
         onClick={() => {
           signInWithFacebook();
+          history.push('/profile');
         }}
         ></div>
 
