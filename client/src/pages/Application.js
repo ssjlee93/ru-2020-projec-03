@@ -8,12 +8,23 @@ import ProfilePage from "./ProfilePage";
 import PasswordReset from "./PasswordReset";
 import Footer from "../components/Footer";
 import Navigation from "../components/Navigation";
-import Authenticated from "../components/Authenticated";
+import UserContext from "../utils/UserContext";
 
 function Application() {
+  const user = useContext(UserContext);
   return (
+    user ?
       <Router>
         <Navigation />
+        <Switch>
+          <Route exact path="/">
+            <ProfilePage />
+          </Route>
+        </Switch>
+        <Footer />
+      </Router>
+      :
+      <Router>
         <Switch>
           <Route exact path="/signUp">
             <SignUp />
@@ -21,12 +32,11 @@ function Application() {
           <Route exact path="/">
             <SignIn />
           </Route>
-          <Authenticated exact path="/profile" component={ProfilePage} />
           <Route exact path="/passwordReset">
             <PasswordReset />
           </Route>
         </Switch>
-         <Footer/>
+        <Footer />
       </Router>
   );
 }

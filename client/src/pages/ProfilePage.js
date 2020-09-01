@@ -105,7 +105,7 @@ const [countries, setCountries] = useState(CountriesObj)
   //api/economist/country get
   const handleDropdownChange = (event) => {	 
     event.preventDefault(); 
-    console.log(event.target);
+    console.log(event.currentTarget);
     const value = event.target.value.split(":");
 
     let name = value[0];
@@ -133,7 +133,6 @@ const [countries, setCountries] = useState(CountriesObj)
     <Container fixed>
     <Grid container spacing={2}>
       <Grid item xs={7}>
-
         <Box my={2}>
           <Card variant="outlined">
             <CardContent>
@@ -141,7 +140,6 @@ const [countries, setCountries] = useState(CountriesObj)
             </CardContent>
           </Card>
         </Box>
-
        <DropdownSection  
        handleDropdownChange = {handleDropdownChange}
        country={country}

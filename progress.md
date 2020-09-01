@@ -168,3 +168,10 @@ components further segmented for better organization and separation of concerns
 #### Trouble
 CRUD still too hard  
 late in schedule  
+
+tomorrow 
+* fix sign up redirect 
+* fix display name not showing 
+* check password reset 
+* fix dropdown option not showing 
+* complete bmindex and its functionality 
