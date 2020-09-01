@@ -1,0 +1,22 @@
+.SignUpMain {
+    text-align: center;
+}
+
+.SignInTitle {
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+}
+
+.SignInContainer {
+    padding-top: 2rem;
+}
+
+.CreateAccBtn {
+    margin-top: 1rem !important;
+}
+
+.SignInTextArea {
+    min-width: 65% !important;
+    margin-bottom: 0.2rem !important;
+    margin-top: 0.2rem !important;
+}
