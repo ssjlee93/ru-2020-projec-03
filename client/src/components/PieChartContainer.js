@@ -1,6 +1,4 @@
 import React from "react";
-import Paper from '@material-ui/core/Paper';
-import Box from "@material-ui/core/Box";
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Chart from "./Chart";
@@ -24,7 +22,6 @@ export default function PieChartCard(props) {
       </Grid>
       <Grid item lg={6}>
       <ul>
-
         <li>{props.userData.administrative} USD</li>
         <li>{props.userData.tickets} USD</li>
         <li>{props.userData.auto} USD</li>

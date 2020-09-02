@@ -19,13 +19,13 @@ export default function Dropdown(props) {
                             <InputLabel htmlFor="age-native-simple">Countries</InputLabel>
                             <Select
                                 native
-                                value={props.country}
+                                value={props.code}
                                 onChange={props.handleDropdownChange}
                             >
                                 <option aria-label="None" value=""/>
                                 {Object.entries(props.countries).map(([key,val]) => {
                                     return (
-                                        <option name={key} value={key+":"+val}>{key}</option>
+                                        <option name={key} key={key} value={key+":"+val}>{key}</option>
                                     )
                                 })}
                             </Select>
