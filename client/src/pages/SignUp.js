@@ -73,7 +73,7 @@ const SignUp = () => {
           onChange={event => onChangeHandler(event)} />
           <br />
           <Button className="CreateAccBtn" variant="outlined" color="primary" onClick={event => {
-            createUserWithEmailAndPasswordHandler(event, email, password);
+            createUser(email, password);
           }}>
             Create Account
             </Button>

@@ -15,44 +15,44 @@ import CountriesObj from '../utils/Countries.json';
 
 const ProfilePage = () => {
   const user = useContext(UserContext);
-  const {email, uid, displayName} = user;
-  const [amount, setAmount ] = useState({});
-  const [ userData, setUserData ] = useState("")
-  const [ economist, setEconomist ] = useState("")
+  const { email, uid, displayName } = user;
+  const [amount, setAmount] = useState({});
+  const [userData, setUserData] = useState("")
+  const [economist, setEconomist] = useState("")
 
   // load user budget  
-    useEffect(() => {
-      loadBudget()
-    }, [])
+  useEffect(() => {
+    loadBudget()
+  })
 
-    useEffect(() => {
-      
-    }, [amount])
+  useEffect(() => {
+
+  }, [])
 
   //api/budget/id get
-   function loadBudget() {
+  function loadBudget() {
 
-     console.log(uid);
-      API.getBudget(uid)
-        .then(res => {
-          if (!res.data) {
-            return
-          } else {
-            setUserData(res.data)
-          }
+    API.getBudget(uid)
+      .then(res => {
+        if (!res.data) {
+          return
+        } else {
+          setUserData(res.data)
         }
-
-        )
-        .catch(err => console.log(err));
-    };  
+      }
+      
+      )
+      .catch(err => console.log(err));
+  };
 
   // recognize value change, CHECKED
   // update state formObject 
-      // what goes in formObject ? 
+  // what goes in formObject ? 
   // create or update tthe amount to database
   const handleInputChange = event => {
-    const {name, value} = event.target;
-    setAmount({...amount,
+    const { name, value } = event.target;
+    setAmount({
+      ...amount,
       [name]: value
     })
   }
@@ -64,107 +64,107 @@ const ProfilePage = () => {
       ...amount,
       uid
     })
-      .then(res => 
+      .then(res =>
         setAmount(res.data)
       )
       .catch(err => console.log(err));
   };
- 
+
   // write code for deleting budget
   //api/budget/id delete
   function removeBudget() {
     console.log(uid);
-     API.deleteBudget(uid)
-       .then(res => {
-         if (!res.data) {
-           return
-         } else {
-           alert(`${displayName} has been DELETED`)
-         }
-       }
-       )
-       .catch(err => console.log(err));
-   };  
+    API.deleteBudget(uid)
+      .then(res => {
+        if (!res.data) {
+          return
+        } else {
+          window.location.reload();
+        }
+      }
+      )
+      .catch(err => console.log(err));
+  };
   // write code for updating budget 
   //api/budget/id put
   function rewriteBudget(event) {
     event.preventDefault();
     API.updateBudget(uid, {
-    ...amount
-  })
-  .then(res => 
-    setAmount(res.data)
-  )
-  .catch(err => console.log(err));
-};
+      ...amount
+    })
+      .then(res =>
+        setAmount(res.data)
+      )
+      .catch(err => console.log(err));
+  };
 
-const [country, setCountry] = useState("");
-const [code, setCode] = useState("");
-const [countries, setCountries] = useState(CountriesObj)
+  const [country, setCountry] = useState("");
+  const [code, setCode] = useState("");
+  const [countries, setCountries] = useState(CountriesObj)
   // write code for ajax call to our index api
   //api/economist/country get
-  const handleDropdownChange = (event) => {	 
-    event.preventDefault(); 
+  const handleDropdownChange = (event) => {
+    event.preventDefault();
     console.log(event.currentTarget);
     const value = event.target.value.split(":");
 
     let name = value[0];
-    let val = value[1];	 
+    let val = value[1];
 
-    setCode(val);	   
-    setCountry(name); 
+    setCode(val);
+    setCountry(name);
     console.log(name)
     API.getIndex(val)
-    .then ((resp)=>{
-      const start = resp.data.indexOf("code")
-      const end = resp.data.indexOf("/code")
-      const str = resp.data.substring(start+26,end-1);
-      const data = JSON.parse(str)
-      console.log(data.dataset.data[0]);
-  })
-};
+      .then((resp) => {
+        const start = resp.data.indexOf("code")
+        const end = resp.data.indexOf("/code")
+        const str = resp.data.substring(start + 26, end - 1);
+        const data = JSON.parse(str)
+        console.log(data.dataset.data[0]);
+      })
+  };
   function loadIndex(event) {
     event.preventDefault();
     API.getIndex(country)
-    .then(res => res)
+      .then(res => res)
   }
 
   return (
     <Container fixed>
-    <Grid container spacing={2}>
-      <Grid item xs={7}>
-        <Box my={2}>
-          <Card variant="outlined">
-            <CardContent>
-              <Typography variant="h5">Hi {displayName}! Welcome to your Budget Dashboard.</Typography>
-            </CardContent>
-          </Card>
-        </Box>
-       <DropdownSection  
-       handleDropdownChange = {handleDropdownChange}
-       country={country}
-       countries={countries}
-       code = {code}
-       />
-       <CategorySection 
-       handleInputChange={handleInputChange} 
-       saveBudget = {saveBudget} 
-       removeBudget = {removeBudget}
-       rewriteBudget = {rewriteBudget}
-       />
+      <Grid container spacing={2}>
+        <Grid item xs={7}>
+          <Box my={2}>
+            <Card variant="outlined">
+              <CardContent>
+                <Typography variant="h5">Hi {displayName}! Welcome to your Budget Dashboard.</Typography>
+              </CardContent>
+            </Card>
+          </Box>
+          <DropdownSection
+            handleDropdownChange={handleDropdownChange}
+            country={country}
+            countries={countries}
+            code={code}
+          />
+          <CategorySection
+            handleInputChange={handleInputChange}
+            saveBudget={saveBudget}
+            removeBudget={removeBudget}
+            rewriteBudget={rewriteBudget}
+          />
+        </Grid>
+        <Grid item xs={5}>
+          <Box my={2}>
+            <Card variant="outlined">
+              <CardContent>
+                <PieChartCard userData={userData} />
+              </CardContent>
+            </Card>
+          </Box>
+        </Grid>
       </Grid>
-      <Grid item xs={5}>
-      <Box my={2}>
-        <Card variant="outlined">
-          <CardContent>
-            <PieChartCard userData={userData}/>
-          </CardContent>
-        </Card>
-      </Box>
-      </Grid>
-    </Grid>
-  </Container>
-  ) 
+    </Container>
+  )
 };
 
 export default ProfilePage;
