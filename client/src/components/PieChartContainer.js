@@ -10,6 +10,8 @@ export default function PieChartCard(props) {
     <Grid container>
       <Grid item lg={6}>
         <ul>
+          <li>Date updated: {props.economistHere[0]}</li>
+          <li>Index America: {props.economistHere[1]}</li>
         <li>Administrative</li>
         <li>Tickets</li>
         <li>Auto</li>
@@ -22,6 +24,7 @@ export default function PieChartCard(props) {
       </Grid>
       <Grid item lg={6}>
       <ul>
+        <li> Index of destination: {props.economistThere[1]}</li>
         <li>{props.userData.administrative} USD</li>
         <li>{props.userData.tickets} USD</li>
         <li>{props.userData.auto} USD</li>
@@ -32,6 +35,17 @@ export default function PieChartCard(props) {
         <li>{props.userData.childcare} USD</li>
         </ul>
       </Grid>
+      <ul>
+        <li> Index of destination: {props.economistThere[1]}</li>
+        <li>{(props.userData.administrative *props.economistThere[1]) /props.economistHere[1] } USD</li>
+        <li>{(props.userData.tickets *props.economistThere[1]) /props.economistHere[1] }  USD</li>
+        <li>{(props.userData.auto *props.economistThere[1]) /props.economistHere[1] }  USD</li>
+        <li>{(props.userData.lodging *props.economistThere[1]) /props.economistHere[1] }  USD</li>
+        <li>{(props.userData.food *props.economistThere[1]) /props.economistHere[1] }  USD</li>
+        <li>{(props.userData.entertainment *props.economistThere[1]) /props.economistHere[1] }  USD</li>
+        <li>{(props.userData.shopping *props.economistThere[1]) /props.economistHere[1] }  USD</li>
+        <li>{(props.userData.childcare *props.economistThere[1]) /props.economistHere[1] }  USD</li>
+        </ul>
     </Grid>
   </div>
 

@@ -146,18 +146,15 @@ Jenny: help Kobe code everything well and presentation around Thursday
 ## 8/25  
 setting up backend with firebase on frontend  
 re-styling components and pages  
+working on basic CRUD. Relying on class activity and previous homework to draw ideas for code  
+frontend polishing began 
 
 #### Future Development  
 using uid vs. email  
 We selected using uid to reference users so that this app might support multi-factor login  
 
-## 8/25 
-working on basic CRUD. Relying on class activity and previous homework to draw ideas for code  
-frontend polishing began  
-
 #### Trouble
-CRUD is too hard  
-Could not finish CRUD on backend  
+CRUD not functioning. Unsure of which code is missing  
 
 ## 8/27  
 CRUD still not working. Modified many files and codes to fit our project  
@@ -169,9 +166,27 @@ components further segmented for better organization and separation of concerns
 CRUD still too hard  
 late in schedule  
 
+## 8/29  
+CRUD finished  
+checking signup functionality  
+Big Mac Index API added in  
+Country dropdown now shows the name of country of destination  
+
+#### Trouble
+Big Mac Index API was returning an HTML as opposed to JSON. Our instructor helped us process it as a JSON  
+Country of destination shows, but the dropdown now does not show the country name  
+signup does not route when signed up  
+signin with email and address does not route when signed in  
+signup and signin with email and password does not work  
+
+## 8/30  
+CRUD fully functioning  
+Big Mac Index calculation added  
+
+## 
 tomorrow 
-* fix sign up redirect 
-* fix display name not showing 
+* fix sign up redirect fixed
+* fix display name not showing fixed
 * check password reset 
-* fix dropdown option not showing 
-* complete bmindex and its functionality 
+* fix dropdown option not showing fuck it 
+* complete bmindex and its functionality checked 

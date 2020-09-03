@@ -1,9 +1,7 @@
 import React, { useContext } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
-
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import SignIn from "./SignIn";
 import SignUp from "./SignUp";
-
 import ProfilePage from "./ProfilePage";
 import PasswordReset from "./PasswordReset";
 import Footer from "../components/Footer";
@@ -19,6 +17,9 @@ function Application() {
         <Switch>
           <Route exact path="/">
             <ProfilePage />
+          </Route>
+          <Route exact path="/signup">
+          <Redirect to="/" />
           </Route>
         </Switch>
         <Footer />
