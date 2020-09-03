@@ -65,7 +65,6 @@ const SignUp = () => {
             value={displayName}
             onChange={event => onChangeHandler(event)} />
           <br />
-
           <TextField 
           id="email" 
           className="SignInTextArea"
@@ -80,7 +79,9 @@ const SignUp = () => {
           id="password" 
           className="SignInTextArea"
           label="Password" 
-          variant="filled"  name="userPassword"
+          variant="filled"  
+          name="userPassword"
+          type="password"
           value={password}
           placeholder="ex: example1234"
           onChange={event => onChangeHandler(event)} />

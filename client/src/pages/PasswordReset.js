@@ -7,7 +7,7 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import { Typography } from "@material-ui/core";
 import "./resetStyle.css";
-import NavNoSignIn from "../components/Navigation/NavNoSignIn";
+
 const PasswordReset = () => {
   const [email, setEmail] = useState("");
   const [emailHasBeenSent, setEmailHasBeenSent] = useState(false);
@@ -35,7 +35,6 @@ const PasswordReset = () => {
   };
   return (
     <div>
-    <NavNoSignIn/>
     <Grid container className="Container">
       <Grid item lg={3}></Grid>
       <Grid item lg={6} className="Main">
