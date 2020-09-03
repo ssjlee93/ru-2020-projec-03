@@ -4,6 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import Chart from "./Chart";
 import { Pie } from 'react-chartjs-2';
 
+import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -13,7 +14,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
 export default function PieChartCard(props) {
-  console.log("Test admin value: " + props.userData.administrative);
+  // console.log("Test admin value: " + props.userData.administrative);
   const [propData, setPropData] = useState([
         props.userData.administrative,
         props.userData.tickets,
@@ -52,22 +53,40 @@ export default function PieChartCard(props) {
     ]
   }
 )
+const StyledTableCell = withStyles((theme) => ({
+  head: {
+    backgroundColor: "#B6EFD4",
+    minWidth: "100%"
+  },
+  body: {
+    fontSize: 14,
+  },
+}))(TableCell);
 
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
+const StyledTableRow = withStyles((theme) => ({
+  root: {
+    '&:nth-of-type(odd)': {
+      backgroundColor: theme.palette.action.hover,
+    },
+  },
+}))(TableRow);
+function createData(category, homeBudget, awayBudget) {
+  return { category, homeBudget, awayBudget};
 }
 
 const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData('Administrative', props.userData.administrative, ((props.userData.administrative *props.economistThere[1]) /props.economistHere[1]).toFixed(2)),
+  createData('Tickets', props.userData.tickets, ((props.userData.tickets *props.economistThere[1]) /props.economistHere[1]).toFixed(2)),
+  createData('Auto', props.userData.auto, ((props.userData.auto *props.economistThere[1]) /props.economistHere[1]).toFixed(2)),
+  createData('Lodging', props.userData.lodging, ((props.userData.lodging *props.economistThere[1]) /props.economistHere[1]).toFixed(2)),
+  createData('Food', props.userData.food, ((props.userData.food *props.economistThere[1]) /props.economistHere[1]).toFixed(2)),
+  createData('Entertainment', props.userData.entertainment, ((props.userData.entertainment *props.economistThere[1]) /props.economistHere[1]).toFixed(2)),
+  createData('Shopping', props.userData.shopping, ((props.userData.shopping *props.economistThere[1]) /props.economistHere[1]).toFixed(2)),
+  createData('Childcare', props.userData.childcare, ((props.userData.childcare *props.economistThere[1]) /props.economistHere[1]).toFixed(2)),
 ];
-
   return (
   <div>
-    <Typography variant="h4">Budget Totals & Summary</Typography>
+    {/* <Typography variant="h4">Budget Totals & Summary</Typography>
       <Chart userData={props.userData}/>
       <div className="chart">
         <Pie
@@ -84,78 +103,52 @@ const rows = [
             }
           }}
         />
-      </div>
-    <Grid container>
-      <Grid item lg={6}>
-        <ul>
-          <li>Date updated: {props.economistHere[0]}</li>
-          <li>Index America: {props.economistHere[1]}</li>
-        <li>Administrative</li>
-        <li>Tickets</li>
-        <li>Auto</li>
-        <li>Lodging</li>
-        <li>Food</li>
-        <li>Entertainment</li>
-        <li>Shopping</li>
-        <li>Childcare</li>
-        </ul>
-      </Grid>
-      <Grid item lg={6}>
-      <ul>
-        <li> Index of destination: {props.economistThere[1]}</li>
-        <li>{props.userData.administrative} USD</li>
-        <li>{props.userData.tickets} USD</li>
-        <li>{props.userData.auto} USD</li>
-        <li>{props.userData.lodging} USD</li>
-        <li>{props.userData.food} USD</li>
-        <li>{props.userData.entertainment} USD</li>
-        <li>{props.userData.shopping} USD</li>
-        <li>{props.userData.childcare} USD</li>
-        </ul>
-      </Grid>
-      <ul>
-        <li> Index of destination: {props.economistThere[1]}</li>
-        <li>{(props.userData.administrative *props.economistThere[1]) /props.economistHere[1] } USD</li>
-        <li>{(props.userData.tickets *props.economistThere[1]) /props.economistHere[1] }  USD</li>
-        <li>{(props.userData.auto *props.economistThere[1]) /props.economistHere[1] }  USD</li>
-        <li>{(props.userData.lodging *props.economistThere[1]) /props.economistHere[1] }  USD</li>
-        <li>{(props.userData.food *props.economistThere[1]) /props.economistHere[1] }  USD</li>
-        <li>{(props.userData.entertainment *props.economistThere[1]) /props.economistHere[1] }  USD</li>
-        <li>{(props.userData.shopping *props.economistThere[1]) /props.economistHere[1] }  USD</li>
-        <li>{(props.userData.childcare *props.economistThere[1]) /props.economistHere[1] }  USD</li>
-        </ul>
-    </Grid>
-
+      </div> */}
+    <Typography variant="h4">Total Budget</Typography>
+    <Typography>Date updated: {props.economistHere[0]}</Typography>
+    <Typography>Index of The United States: {props.economistHere[1]}</Typography>
+    <Typography>Total Orignal Budget (USD): {props.userData.administrative + 
+      props.userData.tickets + props.userData.auto + 
+      props.userData.lodging + props.userData.food + 
+      props.userData.entertainment + 
+      props.userData.shopping + 
+      props.userData.childcare}
+    </Typography>
+    <Typography>Total Indexed Budget (USD): {(((props.userData.administrative *props.economistThere[1]) /props.economistHere[1]) + 
+      ((props.userData.tickets *props.economistThere[1]) /props.economistHere[1]) + 
+      ((props.userData.auto *props.economistThere[1]) /props.economistHere[1]) + 
+      ((props.userData.lodging *props.economistThere[1]) /props.economistHere[1]) + 
+      ((props.userData.food *props.economistThere[1]) /props.economistHere[1]) + 
+      ((props.userData.entertainment *props.economistThere[1]) /props.economistHere[1]) + 
+      ((props.userData.shopping *props.economistThere[1]) /props.economistHere[1]) + 
+      ((props.userData.childcare *props.economistThere[1]) /props.economistHere[1])).toFixed(2)}
+    </Typography>
     <TableContainer component={Paper}>
-      <Table className="Table" aria-label="simple table">
+      <Table aria-label="USD Table">
         <TableHead>
           <TableRow>
-            <TableCell>Dessert (100g serving)</TableCell>
-            <TableCell align="right">Calories</TableCell>
-            <TableCell align="right">Fat&nbsp;(g)</TableCell>
-            <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-            <TableCell align="right">Protein&nbsp;(g)</TableCell>
+            <StyledTableCell>Category</StyledTableCell>
+            <StyledTableCell>Original Budget (USD)</StyledTableCell>
+            <StyledTableCell>Indexed Budget (USD)</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {rows.map((row) => (
-            <TableRow key={row.name}>
-              <TableCell component="th" scope="row">
-                {row.name}
-              </TableCell>
-              <TableCell align="right">{row.calories}</TableCell>
-              <TableCell align="right">{row.fat}</TableCell>
-              <TableCell align="right">{row.carbs}</TableCell>
-              <TableCell align="right">{row.protein}</TableCell>
-            </TableRow>
+            <StyledTableRow key={row.name}>
+              <StyledTableCell component="th" scope="row">
+                {row.category}
+              </StyledTableCell>
+              <StyledTableCell>{row.homeBudget}</StyledTableCell>
+              <StyledTableCell>{row.awayBudget}</StyledTableCell>
+            </StyledTableRow>
           ))}
         </TableBody>
       </Table>
     </TableContainer>
-
   </div>
 
   );
 
 }
 
+//bruh
