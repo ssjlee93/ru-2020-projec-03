@@ -14,24 +14,38 @@ import CountriesObj from '../utils/Countries.json';
 import "./ProfilePageStyle.css";
 
 const ProfilePage = () => {
+  // firebase user info
   const user = useContext(UserContext);
-  const { email, uid, displayName } = user;
+  const { uid, displayName } = user;
+  // state for inputfields 
   const [amount, setAmount] = useState({});
+  // the object for categories: values 
   const [userData, setUserData] = useState("")
-  const [economist, setEconomist] = useState("")
+  // state for ajax call data for selected country
+  const [economistThere, setEconomistThere] = useState([])
+  // state for ajax call data for USA
+  const [economistHere, setEconomistHere] = useState([])
 
-  // load user budget  
+  // load user budget every time 
   useEffect(() => {
-    loadBudget()
+    loadBudget();
+  })
+
+  // load BMindex for America once
+  useEffect(() => {
+    loadIndex();
+    checkUser();
   }, [])
 
-  useEffect(() => {
-
-  }, [])
-
+  // check user
+  function checkUser () {
+    if (!displayName) {
+      window.location.reload();
+    } 
+  }
+  
   //api/budget/id get
   function loadBudget() {
-
     API.getBudget(uid)
       .then(res => {
         if (!res.data) {
@@ -39,16 +53,11 @@ const ProfilePage = () => {
         } else {
           setUserData(res.data)
         }
-      }
-      
-      )
+      })
       .catch(err => console.log(err));
   };
 
-  // recognize value change, CHECKED
-  // update state formObject 
-  // what goes in formObject ? 
-  // create or update tthe amount to database
+  // recognize value change, 
   const handleInputChange = event => {
     const { name, value } = event.target;
     setAmount({
@@ -57,7 +66,7 @@ const ProfilePage = () => {
     })
   }
 
-  // write code for creating budget 
+  // creating budget 
   //api/budget/id post
   function saveBudget() {
     API.createBudget({
@@ -70,7 +79,7 @@ const ProfilePage = () => {
       .catch(err => console.log(err));
   };
 
-  // write code for deleting budget
+  //  deleting budget
   //api/budget/id delete
   function removeBudget() {
     console.log(uid);
@@ -85,7 +94,7 @@ const ProfilePage = () => {
       )
       .catch(err => console.log(err));
   };
-  // write code for updating budget 
+  // updating budget 
   //api/budget/id put
   function rewriteBudget(event) {
     event.preventDefault();
@@ -98,10 +107,15 @@ const ProfilePage = () => {
       .catch(err => console.log(err));
   };
 
+  // states for Big Mac Index api
+  // selected country name
   const [country, setCountry] = useState("");
+  // selected country code
   const [code, setCode] = useState("");
+  // countries and their code imported from a JSON file 
   const [countries, setCountries] = useState(CountriesObj)
-  // write code for ajax call to our index api
+
+  // ajax call to BMIndex for selected country
   //api/economist/country get
   const handleDropdownChange = (event) => {
     event.preventDefault();
@@ -120,13 +134,20 @@ const ProfilePage = () => {
         const end = resp.data.indexOf("/code")
         const str = resp.data.substring(start + 26, end - 1);
         const data = JSON.parse(str)
-        console.log(data.dataset.data[0]);
+       setEconomistThere(data.dataset.data[0]);
       })
   };
-  function loadIndex(event) {
-    event.preventDefault();
-    API.getIndex(country)
-      .then(res => res)
+
+  // ajax call to BMindex for USA
+  function loadIndex() {
+    API.getIndex("USA")
+    .then((resp) => {
+      const start = resp.data.indexOf("code")
+      const end = resp.data.indexOf("/code")
+      const str = resp.data.substring(start + 26, end - 1);
+      const data = JSON.parse(str)
+      setEconomistHere(data.dataset.data[0]);
+    })
   }
 
   return (
@@ -157,7 +178,7 @@ const ProfilePage = () => {
           <Box my={2}>
             <Card variant="outlined">
               <CardContent>
-                <PieChartCard userData={userData} />
+                <PieChartCard economistThere={economistThere} economistHere={economistHere} userData={userData} />
               </CardContent>
             </Card>
           </Box>

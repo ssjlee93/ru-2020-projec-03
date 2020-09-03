@@ -1,12 +1,15 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { Pie } from 'react-chartjs-2';
 
 const Chart = props => {
+
+  // chartData state
   const [ chartData, setChartData] = useState({
     labels: ["Administrative", "Tickets", "Auto", "Lodging", "Food", "Entertainment", "Shopping", "Childcare"],
     datasets: [
       {
         label: "Budget",
+
         data: [100,
           150,
         50,
@@ -28,8 +31,6 @@ const Chart = props => {
     ]
   }
 )
-  
-
 
     return (
       <div className="chart">

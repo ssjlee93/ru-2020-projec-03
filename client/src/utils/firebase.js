@@ -19,18 +19,6 @@ firebase.initializeApp(firebaseConfig);
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 
-export const createUser = (email, password) => {
-  auth.createUserWithEmailAndPassword(email, password)
-  // .then(user => {
-  //   console.log(user);
-  //  if(user) {
-  //    user.updateProfile({
-  //      displayName: display
-  //    })
-  //  }
-  // })
-};
-
 export const signInUser = (email, password) => {
   auth.signInWithEmailAndPassword(email, password);
 }

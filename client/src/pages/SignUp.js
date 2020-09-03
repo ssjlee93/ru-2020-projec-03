@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
-import { updateDisplayName, signInWithGoogle, createUser } from "../utils/firebase";
+import { Link } from "react-router-dom";
+import { auth, generateUserDocument, signInWithGoogle } from "../utils/firebase";
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
@@ -13,6 +13,21 @@ const SignUp = () => {
   const [password, setPassword] = useState("");
   const [displayName, setDisplayName] = useState("");
   const [error, setError] = useState(null);
+
+  const createUser = async (event, email, password) => {
+    event.preventDefault();
+    try{
+      const {user} = await auth.createUserWithEmailAndPassword(email, password);
+      generateUserDocument(user, {displayName});
+    }
+    catch(error){
+      setError('Error Signing up with email and password');
+    }
+      
+    setEmail("");
+    setPassword("");
+    setDisplayName("");
+  };
 
   const onChangeHandler = event => {
     event.preventDefault();
@@ -29,22 +44,20 @@ const SignUp = () => {
 
   return (
     <Grid container className="SignInContainer">
+        
       <Grid item lg={4}></Grid>
       <Grid item lg={4} className="SignUpMain">
         <Card>
       <Typography variant="h4" className="SignInTitle">Sign Up</Typography>
-      <div className="border border-blue-400 mx-auto w-11/12 md:w-2/4 rounded py-8 px-4 md:px-8">
-        {error !== null && (
+      {error !== null && (
           <div className="py-4 bg-red-600 w-full text-white text-center mb-3">
             {error}
           </div>
         )}
 
-
         <form noValidate autoComplete="off" className="SignInForm">
           <TextField id="displayName"
             className="SignInTextArea"
-
             label="Display name"
             variant="filled"
             placeholder="ex: theExample"
@@ -72,9 +85,9 @@ const SignUp = () => {
           placeholder="ex: example1234"
           onChange={event => onChangeHandler(event)} />
           <br />
-          <Button className="CreateAccBtn" variant="outlined" color="primary" onClick={event => {
-            createUser(email, password);
-          }}>
+          <Button className="CreateAccBtn" variant="outlined" color="primary"  onClick={event => {
+              createUser(event, email, password);
+       }}>
             Create Account
             </Button>
           <br />
@@ -101,7 +114,7 @@ const SignUp = () => {
             Sign in here
           </Link>{" "}
         </p>
-      </div>
+
         </Card>
       </Grid>
       <Grid item lg={4}></Grid>
