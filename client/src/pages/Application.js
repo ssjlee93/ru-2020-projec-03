@@ -27,6 +27,7 @@ function Application() {
       </Router>
       :
       <Router>
+      <NavNoSignIn />
         <Switch>
           <Route exact path="/signUp">
             <SignUp />

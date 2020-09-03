@@ -176,17 +176,40 @@ Country dropdown now shows the name of country of destination
 Big Mac Index API was returning an HTML as opposed to JSON. Our instructor helped us process it as a JSON  
 Country of destination shows, but the dropdown now does not show the country name  
 signup does not route when signed up  
-signin with email and address does not route when signed in  
+signin with email and password does not route when signed in  
 signup and signin with email and password does not work  
 
 ## 8/30  
-CRUD fully functioning  
-Big Mac Index calculation added  
+added authenticated.js to route and check user signin status  
+signin with email and password sign in  
 
-## 
-tomorrow 
-* fix sign up redirect fixed
-* fix display name not showing fixed
-* check password reset 
-* fix dropdown option not showing fuck it 
-* complete bmindex and its functionality checked 
+#### Trouble  
+signup does not route when signed up  
+works on one of our coders computer fully, but another one's computer refused to stay logged in on the page  
+* refreshing the page kicked the user out  
+
+## 9/1  
+Big Mac Index API fully functional - calculation for relative PPP implemented  
+piechart implemented  
+signup redirect fixed  
+
+#### Trouble  
+piechart refused to show its values when data was replaced from integer to props  
+signup redirect on any onclick instead of successful user creation  
+displayName not showing when signed up with email/pw  
+displayName not showing on pageload  
+dropdown option not showing country name on dropdown itself  
+
+## 9/2  
+checked all functionality - everything functions  
+signup redirects and routes to profilepage  
+signin functions correctly  
+password reset functions correctly  
+google signin functions correctly  
+added in logo header  
+
+for all remaining troubles, we deciced to abandom them due to time constraints  
+
+#### Trouble  
+forgot to add in country selection in MongoDB model - user must select the country each time  
+piechart still does not function  

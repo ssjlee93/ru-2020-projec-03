@@ -11,7 +11,7 @@ const Chart = props => {
         label: "Budget",
 
         data: [100,
-          150,
+        150,
         50,
         200,
         75,
