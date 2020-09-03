@@ -9,14 +9,15 @@ const Chart = props => {
     datasets: [
       {
         label: "Budget",
-        data: [props.userData.administrative,
-        props.userData.tickets,
-        props.userData.auto,
-        props.userData.lodging,
-        props.userData.food,
-        props.userData.entertainment,
-        props.userData.shopping,
-        props.userData.childcare],
+
+        data: [100,
+          150,
+        50,
+        200,
+        75,
+        75,
+        100,
+        175],
         backgroundColor: [
           'rgba(255, 99, 132, 0.6)',
           'rgba(54, 162, 235, 0.6)',

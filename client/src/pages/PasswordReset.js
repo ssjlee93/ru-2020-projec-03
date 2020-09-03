@@ -1,7 +1,13 @@
 import React, { useState } from "react";
 import { auth } from "../utils/firebase";
 import { Link } from "react-router-dom";
-
+import Card from '@material-ui/core/Card';
+import Grid from '@material-ui/core/Grid';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+import { Typography } from "@material-ui/core";
+import "./resetStyle.css";
+import NavNoSignIn from "../components/Navigation/NavNoSignIn";
 const PasswordReset = () => {
   const [email, setEmail] = useState("");
   const [emailHasBeenSent, setEmailHasBeenSent] = useState(false);
@@ -28,12 +34,16 @@ const PasswordReset = () => {
       });
   };
   return (
-    <div className="mt-8">
-      <h1 className="text-xl text-center font-bold mb-3">
-        Reset your Password
-      </h1>
-      <div className="border border-blue-300 mx-auto w-11/12 md:w-2/4 rounded py-8 px-4 md:px-8">
-        <form action="">
+    <div>
+    <NavNoSignIn/>
+    <Grid container className="Container">
+      <Grid item lg={3}></Grid>
+      <Grid item lg={6} className="Main">
+        <Card className="Card">
+        <Typography variant="h2" classname="Title">
+          Reset your Password
+        </Typography>
+        <form className="ResetForm" action="">
           {emailHasBeenSent && (
             <div className="py-3 bg-green-400 w-full text-white text-center mb-3">
               An email has been sent to you!
@@ -44,26 +54,28 @@ const PasswordReset = () => {
               {error}
             </div>
           )}
-          <label htmlFor="userEmail" className="w-full block">
-            Email:
-          </label>
-          <input
+          
+          <TextField
+            className="textField"
+            variant="filled"
+            label="Email" 
             type="email"
             name="userEmail"
             id="userEmail"
             value={email}
             placeholder="Input your email"
             onChange={onChangeHandler}
-            className="mb-3 w-full px-1 py-2"
           />
-          <button
-            className="w-full bg-blue-400 text-white py-3"
+          <br/>
+          <Button
+            variant="outlined" color="primary"
+            className="EmailBtn"
             onClick={event => {
               sendResetEmail(event);
             }}
           >
             Send me a reset link
-          </button>
+          </Button>
         </form>
 
         <Link
@@ -72,7 +84,10 @@ const PasswordReset = () => {
         >
           &larr; back to sign in page
         </Link>
-      </div>
+        </Card>
+      </Grid>
+      <Grid item lg={3}></Grid>
+    </Grid>
     </div>
   );
 };

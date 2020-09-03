@@ -11,7 +11,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CategorySection from "../components/CategorySection";
 import API from "../utils/API";
 import CountriesObj from '../utils/Countries.json';
-
+import "./ProfilePageStyle.css";
 
 const ProfilePage = () => {
   // firebase user info
