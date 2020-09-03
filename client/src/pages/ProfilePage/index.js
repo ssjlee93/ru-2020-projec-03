@@ -1,17 +1,21 @@
 import React, { useContext, useState, useEffect } from "react";
-import UserContext from "../utils/UserContext";
-import Grid from '@material-ui/core/Grid';
-import Container from '@material-ui/core/Container';
-import PieChartCard from "../components/PieChartContainer";
-import Typography from '@material-ui/core/Typography';
-import DropdownSection from "../components/DropdownSection";
+// Material UI imports
 import Box from "@material-ui/core/Box";
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
-import CategorySection from "../components/CategorySection";
-import API from "../utils/API";
-import CountriesObj from '../utils/Countries.json';
-import "./ProfilePageStyle.css";
+import Grid from '@material-ui/core/Grid';
+import Container from '@material-ui/core/Container';
+import Typography from '@material-ui/core/Typography';
+// components
+import ChartSection from "../../components/ChartSection";
+import TableSection from "../../components/TableSection";
+import DropdownSection from "../../components/DropdownSection";
+import CategorySection from "../../components/CategorySection";
+// utils
+import UserContext from "../../utils/UserContext";
+import API from "../../utils/API";
+import CountriesObj from "../../utils/Countries.json";
+import "./style.css";
 
 const ProfilePage = () => {
   // firebase user info
@@ -119,15 +123,11 @@ const ProfilePage = () => {
   //api/economist/country get
   const handleDropdownChange = (event) => {
     event.preventDefault();
-    console.log(event.currentTarget);
     const value = event.target.value.split(":");
-
     let name = value[0];
     let val = value[1];
-
     setCode(val);
     setCountry(name);
-    console.log(name)
     API.getIndex(val)
       .then((resp) => {
         const start = resp.data.indexOf("code")
@@ -178,7 +178,7 @@ const ProfilePage = () => {
           <Box my={2}>
             <Card variant="outlined">
               <CardContent>
-                <PieChartCard economistThere={economistThere} economistHere={economistHere} userData={userData} />
+                <TableSection economistThere={economistThere} economistHere={economistHere} userData={userData} />
               </CardContent>
             </Card>
           </Box>

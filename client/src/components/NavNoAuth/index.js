@@ -1,14 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import Button from "@material-ui/core/Button";
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
-import {auth} from "../../utils/firebase";
 
-import "./index.css";
+import "./style.css";
 
-
-const NavNoSignIn = () => (
+const NavNoAuth = () => (
   <div className="NavBarContainer">
   <Box display="flex">
       <Box flexGrow={1}>
@@ -18,4 +14,4 @@ const NavNoSignIn = () => (
 </div>
 );
 
-export default NavNoSignIn;
+export default NavNoAuth;

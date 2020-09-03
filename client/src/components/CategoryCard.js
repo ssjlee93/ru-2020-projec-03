@@ -16,7 +16,6 @@ export default function CategoryCard(props) {
             {props.category}
             </Typography>
             <Typography variant="body2" component="p">
-              {/* Put Example of Expense here */} Restaurants, Grocery, etc.
               <br />
             </Typography>
           </CardContent>

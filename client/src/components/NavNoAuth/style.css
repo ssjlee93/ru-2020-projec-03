@@ -1,0 +1,12 @@
+.NavBarContainer {
+    background-color: #fff;
+    justify-content: space-between;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.title {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-family: 'Pacifico', cursive !important;
+}
