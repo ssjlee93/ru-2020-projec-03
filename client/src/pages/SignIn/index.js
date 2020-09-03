@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { signInWithGoogle, signInWithFacebook, auth } from "../utils/firebase";
-import Banner from "../components/Banner";
+import { signInWithGoogle, signInWithFacebook, auth } from "../../utils/firebase";
+import Banner from "../../components/Banner";
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
-import "./SignInStyle.css";
+import "./style.css";
 
 const SignIn = () => {
   const [email, setEmail] = useState('');

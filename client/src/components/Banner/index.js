@@ -1,7 +1,7 @@
 import React from "react";
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import "./BannerStyle.css";
+import "./style.css"
 // Plain About Me page. No sign in or sign up on this page 
 function Banner() {
   return (

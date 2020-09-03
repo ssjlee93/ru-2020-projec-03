@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import SignIn from "./SignIn";
-import SignUp from "./SignUp";
+import SignUp from "./SingUp";
 import ProfilePage from "./ProfilePage";
 import PasswordReset from "./PasswordReset";
 import Footer from "../components/Footer";
-import Navigation from "../components/Navigation/index";
-import NavNoSignIn from "../components/Navigation/NavNoSignIn";
+import NavAuth from "../components/NavAuth";
+import NavNoAuth from "../components/NavNoAuth";
 import UserContext from "../utils/UserContext";
 
 function Application() {
@@ -14,7 +14,7 @@ function Application() {
   return (
     user ?
       <Router>
-        <Navigation />
+        <NavAuth />
         <Switch>
           <Route exact path="/">
             <ProfilePage />
@@ -27,7 +27,7 @@ function Application() {
       </Router>
       :
       <Router>
-      <NavNoSignIn />
+      <NavNoAuth />
         <Switch>
           <Route exact path="/signUp">
             <SignUp />
