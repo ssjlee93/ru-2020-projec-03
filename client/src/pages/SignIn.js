@@ -10,6 +10,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import "./SignInStyle.css";
+import NavNoSignIn from "../components/Navigation/NavNoSignIn";
 
 const SignIn = () => {
   const [email, setEmail] = useState('');
@@ -28,6 +29,8 @@ const SignIn = () => {
 
 
   return (
+    <div>
+    <NavNoSignIn/>
     <Grid className="mainContainer" container spacing={3}>
       <Grid item lg={1}></Grid>
       <Banner />
@@ -104,6 +107,7 @@ const SignIn = () => {
       </Grid>
       <Grid item lg={1}></Grid>
     </Grid>
+    </div>
   );
 };
 
