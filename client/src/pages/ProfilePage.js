@@ -11,7 +11,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CategorySection from "../components/CategorySection";
 import API from "../utils/API";
 import CountriesObj from '../utils/Countries.json';
-
+import "./ProfilePageStyle.css";
 
 const ProfilePage = () => {
   const user = useContext(UserContext);
@@ -23,7 +23,7 @@ const ProfilePage = () => {
   // load user budget  
   useEffect(() => {
     loadBudget()
-  })
+  }, [])
 
   useEffect(() => {
 
